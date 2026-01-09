@@ -1,0 +1,11 @@
+# robots.txt für Elbwacht Security Service
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://elbwacht.de/sitemap.xml
+
+# Crawl-Delay für bessere Server-Performance
+Crawl-delay: 1
