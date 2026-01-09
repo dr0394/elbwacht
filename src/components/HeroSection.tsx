@@ -26,7 +26,7 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
                 <span className="text-royal-700 font-black text-sm tracking-widest uppercase">Sicherheit mit Verantwortung</span>
               </div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black mb-6 leading-tight tracking-tight">
-                <span className="text-gray-900">Sicherheitsdienste in Hamburg –</span>{' '}
+                <span className="text-gray-900">Ihr Sicherheitsdienst aus Hamburg –</span>{' '}
                 <span className="text-royal-700 drop-shadow-[0_0_30px_rgba(29,78,216,0.5)]">zuverlässig, präsent, verantwortungsvoll</span>
               </h1>
             </div>
