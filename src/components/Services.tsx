@@ -52,8 +52,13 @@ export default function Services() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <div className="inline-block mb-6 px-6 py-2 border-2 border-royal-700 bg-royal-100/50 backdrop-blur-sm rounded-full">
-            <span className="text-royal-700 font-black text-sm tracking-widest uppercase">Unsere Leistungen</span>
+          <div
+            className="inline-block mb-6 px-6 py-2 border-2 border-white/20 backdrop-blur-sm rounded-full relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+            }}
+          >
+            <span className="text-white font-black text-sm tracking-widest uppercase relative z-10">Unsere Leistungen</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-black mb-6 tracking-tight text-gray-900">
             Professionelle Sicherheitslösungen
@@ -66,15 +71,31 @@ export default function Services() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div key={index} className="group relative">
-              <div className="absolute -inset-1 bg-royal-700/10 blur-2xl group-hover:bg-royal-700/20 transition-all rounded-lg"></div>
-              <div className="relative h-full backdrop-blur-sm border group-hover:border-royal-700/50 rounded-lg p-8 transition-all bg-gradient-to-br from-white to-gray-50/50 border-gray-200">
+              <div
+                className="absolute -inset-1 blur-2xl group-hover:opacity-100 opacity-50 transition-all rounded-lg"
+                style={{
+                  background: 'radial-gradient(circle, rgba(13,21,45,0.15) 0%, transparent 70%)',
+                }}
+              ></div>
+              <div className="relative h-full backdrop-blur-sm border group-hover:border-white/30 rounded-lg p-8 transition-all bg-gradient-to-br from-white to-gray-50/50 border-gray-200">
                 <div className="mb-6">
-                  <div className="inline-block p-4 bg-royal-700/20 border-2 border-royal-700 rounded-lg group-hover:scale-110 transition-transform">
-                    <service.icon className="h-8 w-8 text-royal-700" strokeWidth={2.5} />
+                  <div
+                    className="inline-block p-4 border-2 border-white/20 rounded-lg group-hover:scale-110 transition-all duration-300 relative overflow-hidden"
+                    style={{
+                      background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                    }}
+                  >
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{
+                        background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
+                      }}
+                    />
+                    <service.icon className="h-8 w-8 text-white relative z-10" strokeWidth={2.5} />
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-black mb-4 group-hover:text-royal-700 transition-colors tracking-tight text-gray-900">
+                <h3 className="text-2xl font-black mb-4 transition-colors tracking-tight text-gray-900 group-hover:bg-gradient-to-r group-hover:from-royal-700 group-hover:to-royal-500 group-hover:bg-clip-text group-hover:text-transparent">
                   {service.title}
                 </h3>
 
@@ -85,7 +106,12 @@ export default function Services() {
                 <div className="space-y-3 pt-6 border-t border-gray-200">
                   {service.features.map((feature, idx) => (
                     <div key={idx} className="flex items-center space-x-3">
-                      <div className="w-1.5 h-1.5 bg-royal-700 rounded-full"></div>
+                      <div
+                        className="w-1.5 h-1.5 rounded-full"
+                        style={{
+                          background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                        }}
+                      ></div>
                       <span className="text-sm font-medium text-gray-600">{feature}</span>
                     </div>
                   ))}
@@ -96,11 +122,22 @@ export default function Services() {
         </div>
 
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-4 backdrop-blur-sm px-8 py-6 rounded-full border bg-white/80 border-gray-200">
-            <Shield className="h-8 w-8 text-royal-700" />
-            <div className="text-left">
-              <div className="font-black text-lg text-gray-900">Individuelle Lösungen</div>
-              <div className="text-sm font-medium text-gray-700">Wir beraten Sie gerne persönlich</div>
+          <div
+            className="inline-flex items-center gap-4 backdrop-blur-sm px-8 py-6 rounded-full border border-white/20 relative overflow-hidden group cursor-pointer transition-all hover:scale-105"
+            style={{
+              background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+            }}
+          >
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              style={{
+                background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
+              }}
+            />
+            <Shield className="h-8 w-8 text-white relative z-10" />
+            <div className="text-left relative z-10">
+              <div className="font-black text-lg text-white">Individuelle Lösungen</div>
+              <div className="text-sm font-medium text-gray-300">Wir beraten Sie gerne persönlich</div>
             </div>
           </div>
         </div>

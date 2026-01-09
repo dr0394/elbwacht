@@ -31,14 +31,24 @@ export default function Navigation({ onOpenForm }: NavigationProps) {
         <div className="flex justify-between items-center h-20">
           <button onClick={() => scrollToSection('hero')} className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="absolute inset-0 bg-royal-700/50 blur-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative p-2 bg-gradient-to-br from-royal-600 to-royal-800 border-2 border-royal-600">
+              <div
+                className="absolute inset-0 blur-lg opacity-0 group-hover:opacity-100 transition-opacity rounded-md"
+                style={{
+                  background: 'radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%)',
+                }}
+              ></div>
+              <div
+                className="relative p-2 border-2 border-white/20 rounded-md"
+                style={{
+                  background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                }}
+              >
                 <Shield className="h-8 w-8 text-white" strokeWidth={2.5} />
               </div>
             </div>
             <div>
               <div className="font-black text-xl tracking-wide text-gray-900">ELBWACHT</div>
-              <div className="text-royal-700 text-xs font-bold tracking-widest">SECURITY SERVICE</div>
+              <div className="text-xs font-bold tracking-widest bg-gradient-to-r from-royal-700 to-royal-500 bg-clip-text text-transparent">SECURITY SERVICE</div>
             </div>
           </button>
 
@@ -57,16 +67,30 @@ export default function Navigation({ onOpenForm }: NavigationProps) {
                 className="transition-all duration-300 font-medium relative group drop-shadow-md text-gray-700 hover:text-gray-900"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-royal-700 transition-all duration-300 group-hover:w-full"></span>
+                <span
+                  className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full rounded-full"
+                  style={{
+                    background: 'linear-gradient(90deg, #0d152d 0%, #213571 100%)',
+                  }}
+                ></span>
               </button>
             ))}
 
             <button
               onClick={onOpenForm}
-              className="bg-royal-700 hover:bg-royal-800 border border-royal-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-2"
+              className="relative overflow-hidden border border-white/20 text-white px-6 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl flex items-center space-x-2 group"
+              style={{
+                background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+              }}
             >
-              <AlertCircle className="w-4 h-4" />
-              <span>Anfrage senden</span>
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: 'radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%)',
+                }}
+              />
+              <AlertCircle className="w-4 h-4 relative z-10" />
+              <span className="relative z-10">Anfrage senden</span>
             </button>
           </nav>
 
@@ -100,9 +124,18 @@ export default function Navigation({ onOpenForm }: NavigationProps) {
             ))}
             <button
               onClick={onOpenForm}
-              className="block w-full bg-royal-700 hover:bg-royal-800 text-white px-6 py-3 rounded-full font-semibold transition-all mt-4"
+              className="block w-full relative overflow-hidden border border-white/20 text-white px-6 py-3 rounded-full font-semibold transition-all mt-4 group"
+              style={{
+                background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+              }}
             >
-              Anfrage senden
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: 'radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%)',
+                }}
+              />
+              <span className="relative z-10">Anfrage senden</span>
             </button>
           </div>
         </div>

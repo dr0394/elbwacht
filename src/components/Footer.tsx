@@ -14,12 +14,17 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="p-2 bg-gradient-to-br from-royal-700 to-royal-800 border-2 border-royal-700">
+              <div
+                className="p-2 border-2 border-white/20"
+                style={{
+                  background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                }}
+              >
                 <Shield className="h-8 w-8 text-white" strokeWidth={2.5} />
               </div>
               <div>
                 <div className="font-black text-xl tracking-wide text-gray-900">ELBWACHT</div>
-                <div className="text-royal-700 text-xs font-bold tracking-widest">SECURITY SERVICE</div>
+                <div className="text-xs font-bold tracking-widest bg-gradient-to-r from-royal-700 to-royal-500 bg-clip-text text-transparent">SECURITY SERVICE</div>
               </div>
             </div>
             <p className="mb-6 leading-relaxed font-medium text-gray-700">
@@ -32,7 +37,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {['Objektschutz', 'Eventschutz', 'Revierdienst', 'Empfangsdienste', 'Baustellensicherung', 'Mietnomaden-Schutz'].map((item) => (
                 <li key={item}>
-                  <a href="#leistungen" className="hover:text-royal-700 transition-colors font-medium text-gray-700">
+                  <a href="#leistungen" className="hover:bg-gradient-to-r hover:from-royal-700 hover:to-royal-500 hover:bg-clip-text hover:text-transparent transition-all font-medium text-gray-700">
                     {item}
                   </a>
                 </li>
@@ -50,7 +55,7 @@ export default function Footer() {
                 { label: 'Kontakt', href: '#kontakt' }
               ].map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} className="hover:text-royal-700 transition-colors font-medium text-gray-700">
+                  <a href={item.href} className="hover:bg-gradient-to-r hover:from-royal-700 hover:to-royal-500 hover:bg-clip-text hover:text-transparent transition-all font-medium text-gray-700">
                     {item.label}
                   </a>
                 </li>
@@ -62,24 +67,45 @@ export default function Footer() {
             <h3 className="font-black text-lg mb-6 tracking-tight text-gray-900">Kontakt</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
-                <Phone className="h-5 w-5 text-royal-700 flex-shrink-0 mt-0.5" />
+                <div
+                  className="h-5 w-5 flex-shrink-0 mt-0.5 rounded-sm p-1"
+                  style={{
+                    background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                  }}
+                >
+                  <Phone className="h-full w-full text-white" strokeWidth={2.5} />
+                </div>
                 <div className="font-medium text-gray-700">
-                  <a href="tel:+4940253302940" className="hover:text-royal-700 transition-colors block">
+                  <a href="tel:+4940253302940" className="hover:bg-gradient-to-r hover:from-royal-700 hover:to-royal-500 hover:bg-clip-text hover:text-transparent transition-all block">
                     +49 40 / 25330294
                   </a>
-                  <a href="tel:+491638467694" className="hover:text-royal-700 transition-colors block text-sm mt-1">
+                  <a href="tel:+491638467694" className="hover:bg-gradient-to-r hover:from-royal-700 hover:to-royal-500 hover:bg-clip-text hover:text-transparent transition-all block text-sm mt-1">
                     +49 163 / 8467694
                   </a>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
-                <Mail className="h-5 w-5 text-royal-700 flex-shrink-0 mt-0.5" />
-                <a href="mailto:info@elbwacht.de" className="hover:text-royal-700 transition-colors font-medium text-gray-700">
+                <div
+                  className="h-5 w-5 flex-shrink-0 mt-0.5 rounded-sm p-1"
+                  style={{
+                    background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                  }}
+                >
+                  <Mail className="h-full w-full text-white" strokeWidth={2.5} />
+                </div>
+                <a href="mailto:info@elbwacht.de" className="hover:bg-gradient-to-r hover:from-royal-700 hover:to-royal-500 hover:bg-clip-text hover:text-transparent transition-all font-medium text-gray-700">
                   info@elbwacht.de
                 </a>
               </li>
               <li className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-royal-700 flex-shrink-0 mt-0.5" />
+                <div
+                  className="h-5 w-5 flex-shrink-0 mt-0.5 rounded-sm p-1"
+                  style={{
+                    background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                  }}
+                >
+                  <MapPin className="h-full w-full text-white" strokeWidth={2.5} />
+                </div>
                 <span className="font-medium text-gray-700">
                   Wandsbeker Chaussee 11<br />
                   22089 Hamburg
@@ -95,10 +121,10 @@ export default function Footer() {
               © {currentYear} Elbwacht Security Service GmbH. Alle Rechte vorbehalten.
             </p>
             <div className="flex gap-6">
-              <Link to="/impressum" className="hover:text-royal-700 transition-colors text-sm font-medium text-gray-700">
+              <Link to="/impressum" className="hover:bg-gradient-to-r hover:from-royal-700 hover:to-royal-500 hover:bg-clip-text hover:text-transparent transition-all text-sm font-medium text-gray-700">
                 Impressum
               </Link>
-              <Link to="/datenschutz" className="hover:text-royal-700 transition-colors text-sm font-medium text-gray-700">
+              <Link to="/datenschutz" className="hover:bg-gradient-to-r hover:from-royal-700 hover:to-royal-500 hover:bg-clip-text hover:text-transparent transition-all text-sm font-medium text-gray-700">
                 Datenschutz
               </Link>
             </div>
