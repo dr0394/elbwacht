@@ -31,14 +31,14 @@ export default function Navigation({ onOpenForm }: NavigationProps) {
         <div className="flex justify-between items-center h-20">
           <button onClick={() => scrollToSection('hero')} className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="absolute inset-0 bg-blue-700/50 blur-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative p-2 bg-gradient-to-br from-blue-600 to-blue-800 border-2 border-blue-500">
+              <div className="absolute inset-0 bg-royal-700/50 blur-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative p-2 bg-gradient-to-br from-royal-600 to-royal-800 border-2 border-royal-600">
                 <Shield className="h-8 w-8 text-white" strokeWidth={2.5} />
               </div>
             </div>
             <div>
               <div className="font-black text-xl tracking-wide text-gray-900">ELBWACHT</div>
-              <div className="text-blue-700 text-xs font-bold tracking-widest">SECURITY SERVICE</div>
+              <div className="text-royal-700 text-xs font-bold tracking-widest">SECURITY SERVICE</div>
             </div>
           </button>
 
@@ -57,7 +57,7 @@ export default function Navigation({ onOpenForm }: NavigationProps) {
                 className="transition-all duration-300 font-medium relative group drop-shadow-md text-gray-700 hover:text-gray-900"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-royal-700 transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
 
@@ -83,7 +83,7 @@ export default function Navigation({ onOpenForm }: NavigationProps) {
 
             <button
               onClick={onOpenForm}
-              className="bg-blue-700 hover:bg-blue-800 border border-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-2"
+              className="bg-royal-700 hover:bg-royal-800 border border-royal-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-2"
             >
               <AlertCircle className="w-4 h-4" />
               <span>Anfrage senden</span>
@@ -120,7 +120,7 @@ export default function Navigation({ onOpenForm }: NavigationProps) {
             ))}
             <button
               onClick={onOpenForm}
-              className="block w-full bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-full font-semibold transition-all mt-4"
+              className="block w-full bg-royal-700 hover:bg-royal-800 text-white px-6 py-3 rounded-full font-semibold transition-all mt-4"
             >
               Anfrage senden
             </button>

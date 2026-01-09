@@ -51,8 +51,8 @@ export default function FAQ() {
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <div className="inline-block mb-6 px-6 py-2 border-2 border-blue-700 bg-blue-50 backdrop-blur-sm rounded-full">
-            <span className="text-blue-700 font-black text-sm tracking-widest uppercase">Häufige Fragen</span>
+          <div className="inline-block mb-6 px-6 py-2 border-2 border-royal-700 bg-royal-50 backdrop-blur-sm rounded-full">
+            <span className="text-royal-700 font-black text-sm tracking-widest uppercase">Häufige Fragen</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tight">
             FAQ
@@ -65,22 +65,22 @@ export default function FAQ() {
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div key={index} className="group relative">
-              <div className="absolute -inset-1 bg-blue-700/10 blur-xl opacity-0 group-hover:opacity-100 transition-all rounded-lg"></div>
-              <div className="relative bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-blue-700/50 rounded-lg transition-all overflow-hidden">
+              <div className="absolute -inset-1 bg-royal-700/10 blur-xl opacity-0 group-hover:opacity-100 transition-all rounded-lg"></div>
+              <div className="relative bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-royal-700/50 rounded-lg transition-all overflow-hidden">
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full px-8 py-6 flex items-center justify-between text-left"
                 >
                   <div className="flex items-center gap-4 flex-1">
-                    <div className="flex-shrink-0 p-2 bg-blue-700/20 border-2 border-blue-700 rounded-lg">
-                      <HelpCircle className="h-5 w-5 text-blue-700" strokeWidth={2.5} />
+                    <div className="flex-shrink-0 p-2 bg-royal-700/20 border-2 border-royal-700 rounded-lg">
+                      <HelpCircle className="h-5 w-5 text-royal-700" strokeWidth={2.5} />
                     </div>
                     <span className="text-gray-900 font-bold text-lg tracking-tight">
                       {faq.question}
                     </span>
                   </div>
                   <ChevronDown
-                    className={`h-6 w-6 text-blue-700 transition-transform flex-shrink-0 ml-4 ${
+                    className={`h-6 w-6 text-royal-700 transition-transform flex-shrink-0 ml-4 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
@@ -110,7 +110,7 @@ export default function FAQ() {
             </p>
             <a
               href="tel: +494025330294"
-              className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105"
+              className="inline-block bg-royal-700 hover:bg-royal-800 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105"
             >
                +49 40 25330294
             </a>

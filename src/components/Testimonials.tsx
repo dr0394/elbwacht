@@ -52,8 +52,8 @@ export default function Testimonials() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <div className="inline-block mb-6 px-6 py-2 border-2 border-blue-700 bg-blue-50 backdrop-blur-sm rounded-full">
-            <span className="text-blue-700 font-black text-sm tracking-widest uppercase">Kundenmeinungen</span>
+          <div className="inline-block mb-6 px-6 py-2 border-2 border-royal-700 bg-royal-50 backdrop-blur-sm rounded-full">
+            <span className="text-royal-700 font-black text-sm tracking-widest uppercase">Kundenmeinungen</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tight">
             Das sagen unsere Kunden
@@ -66,10 +66,10 @@ export default function Testimonials() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="group relative">
-              <div className="absolute -inset-1 bg-blue-700/10 blur-2xl group-hover:bg-blue-700/20 transition-all rounded-lg"></div>
-              <div className="relative h-full bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-blue-700/50 rounded-lg p-8 transition-all">
+              <div className="absolute -inset-1 bg-royal-700/10 blur-2xl group-hover:bg-royal-700/20 transition-all rounded-lg"></div>
+              <div className="relative h-full bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-royal-700/50 rounded-lg p-8 transition-all">
                 <div className="flex justify-between items-start mb-6">
-                  <Quote className="h-10 w-10 text-blue-700/40" strokeWidth={2} />
+                  <Quote className="h-10 w-10 text-royal-700/40" strokeWidth={2} />
                   <div className="flex gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />

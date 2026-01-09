@@ -42,8 +42,8 @@ export default function WhyUs() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <div className="inline-block mb-6 px-6 py-2 border-2 border-blue-700 bg-blue-50 backdrop-blur-sm rounded-full">
-            <span className="text-blue-700 font-black text-sm tracking-widest uppercase">Warum Elbwacht</span>
+          <div className="inline-block mb-6 px-6 py-2 border-2 border-royal-700 bg-royal-50 backdrop-blur-sm rounded-full">
+            <span className="text-royal-700 font-black text-sm tracking-widest uppercase">Warum Elbwacht</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-black mb-6 tracking-tight text-gray-900">
             Sicherheit, auf die Sie sich verlassen können
@@ -56,11 +56,11 @@ export default function WhyUs() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => (
             <div key={index} className="group relative">
-              <div className="absolute -inset-1 bg-blue-700/10 blur-2xl group-hover:bg-blue-700/20 transition-all rounded-lg"></div>
-              <div className="relative h-full backdrop-blur-sm border group-hover:border-blue-700/50 rounded-lg p-8 transition-all bg-gradient-to-br from-white to-gray-50/50 border-gray-200">
+              <div className="absolute -inset-1 bg-royal-700/10 blur-2xl group-hover:bg-royal-700/20 transition-all rounded-lg"></div>
+              <div className="relative h-full backdrop-blur-sm border group-hover:border-royal-700/50 rounded-lg p-8 transition-all bg-gradient-to-br from-white to-gray-50/50 border-gray-200">
                 <div className="mb-6">
-                  <div className="inline-block p-4 bg-blue-700/20 border-2 border-blue-700 rounded-lg group-hover:scale-110 transition-transform">
-                    <feature.icon className="h-8 w-8 text-blue-700" strokeWidth={2.5} />
+                  <div className="inline-block p-4 bg-royal-700/20 border-2 border-royal-700 rounded-lg group-hover:scale-110 transition-transform">
+                    <feature.icon className="h-8 w-8 text-royal-700" strokeWidth={2.5} />
                   </div>
                 </div>
 
@@ -77,8 +77,8 @@ export default function WhyUs() {
         </div>
 
         <div className="relative group">
-          <div className="absolute -inset-2 bg-gradient-to-r from-blue-700/20 via-blue-700/30 to-blue-700/20 blur-2xl rounded-lg"></div>
-          <div className="relative bg-gradient-to-r from-blue-700 to-blue-800 text-white p-10 border-2 border-blue-700 rounded-lg shadow-2xl">
+          <div className="absolute -inset-2 bg-gradient-to-r from-royal-700/20 via-royal-700/30 to-royal-700/20 blur-2xl rounded-lg"></div>
+          <div className="relative bg-gradient-to-r from-royal-700 to-royal-800 text-white p-10 border-2 border-royal-700 rounded-lg shadow-2xl">
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div className="p-6 bg-gray-50/20 backdrop-blur-sm border-2 border-white rounded-lg">
                 <div className="text-5xl font-black mb-2">15+</div>

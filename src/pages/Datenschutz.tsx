@@ -23,7 +23,7 @@ export default function Datenschutz() {
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-gray-600 hover:text-blue-700 transition-colors mb-8 font-medium"
+          className="inline-flex items-center gap-2 text-gray-600 hover:text-royal-700 transition-colors mb-8 font-medium"
         >
           <ArrowLeft className="h-5 w-5" />
           Zurück zur Startseite
@@ -31,8 +31,8 @@ export default function Datenschutz() {
 
         <div className="bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 rounded-lg p-8 lg:p-12 shadow-lg">
           <div className="flex items-center gap-4 mb-8">
-            <div className="p-3 bg-blue-700/20 border-2 border-blue-700 rounded-lg">
-              <Shield className="h-8 w-8 text-blue-700" strokeWidth={2.5} />
+            <div className="p-3 bg-royal-700/20 border-2 border-royal-700 rounded-lg">
+              <Shield className="h-8 w-8 text-royal-700" strokeWidth={2.5} />
             </div>
             <h1 className="text-4xl font-black text-gray-900 tracking-tight">Datenschutzerklärung</h1>
           </div>
@@ -136,7 +136,7 @@ export default function Datenschutz() {
                   href="https://policies.google.com/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-red-500 hover:text-red-400 underline"
+                  className="text-royal-600 hover:text-royal-700 underline"
                 >
                   https://policies.google.com/privacy
                 </a>

@@ -36,8 +36,8 @@ export default function Certifications() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <div className="inline-block mb-6 px-6 py-2 border-2 border-blue-700 bg-blue-50 backdrop-blur-sm rounded-full">
-            <span className="text-blue-700 font-black text-sm tracking-widest uppercase">Qualifikationen</span>
+          <div className="inline-block mb-6 px-6 py-2 border-2 border-royal-700 bg-royal-50 backdrop-blur-sm rounded-full">
+            <span className="text-royal-700 font-black text-sm tracking-widest uppercase">Qualifikationen</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tight">
             Zertifizierte Kompetenz
@@ -50,12 +50,12 @@ export default function Certifications() {
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {certifications.map((cert, index) => (
             <div key={index} className="group relative">
-              <div className="absolute -inset-1 bg-blue-700/10 blur-2xl group-hover:bg-blue-700/20 transition-all rounded-lg"></div>
-              <div className="relative h-full bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-blue-700/50 rounded-lg p-8 transition-all">
+              <div className="absolute -inset-1 bg-royal-700/10 blur-2xl group-hover:bg-royal-700/20 transition-all rounded-lg"></div>
+              <div className="relative h-full bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-royal-700/50 rounded-lg p-8 transition-all">
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0">
-                    <div className="p-4 bg-blue-700/20 border-2 border-blue-700 rounded-lg group-hover:scale-110 transition-transform">
-                      <cert.icon className="h-10 w-10 text-blue-700" strokeWidth={2.5} />
+                    <div className="p-4 bg-royal-700/20 border-2 border-royal-700 rounded-lg group-hover:scale-110 transition-transform">
+                      <cert.icon className="h-10 w-10 text-royal-700" strokeWidth={2.5} />
                     </div>
                   </div>
 
@@ -71,7 +71,7 @@ export default function Certifications() {
                     <div className="space-y-3 pt-6 border-t border-gray-200">
                       {cert.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center space-x-3">
-                          <div className="w-1.5 h-1.5 bg-blue-700 rounded-full"></div>
+                          <div className="w-1.5 h-1.5 bg-royal-700 rounded-full"></div>
                           <span className="text-gray-600 text-sm font-medium">{feature}</span>
                         </div>
                       ))}
@@ -84,8 +84,8 @@ export default function Certifications() {
         </div>
 
         <div className="relative group">
-          <div className="absolute -inset-2 bg-gradient-to-r from-blue-700/20 via-blue-700/30 to-blue-700/20 blur-2xl rounded-lg"></div>
-          <div className="relative bg-gradient-to-r from-blue-700 to-blue-800 text-white p-10 border-2 border-blue-700 rounded-lg shadow-2xl">
+          <div className="absolute -inset-2 bg-gradient-to-r from-royal-700/20 via-royal-700/30 to-royal-700/20 blur-2xl rounded-lg"></div>
+          <div className="relative bg-gradient-to-r from-royal-700 to-royal-800 text-white p-10 border-2 border-royal-700 rounded-lg shadow-2xl">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="flex-1">
                 <p className="text-2xl lg:text-3xl font-black mb-3 uppercase tracking-tight">

@@ -40,8 +40,8 @@ export default function Career() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <div className="inline-block mb-6 px-6 py-2 border-2 border-blue-700 bg-blue-50 backdrop-blur-sm rounded-full">
-            <span className="text-blue-700 font-black text-sm tracking-widest uppercase">Karriere</span>
+          <div className="inline-block mb-6 px-6 py-2 border-2 border-royal-700 bg-royal-50 backdrop-blur-sm rounded-full">
+            <span className="text-royal-700 font-black text-sm tracking-widest uppercase">Karriere</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tight">
             Werde Teil unseres Teams
@@ -54,11 +54,11 @@ export default function Career() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {benefits.map((benefit, index) => (
             <div key={index} className="group relative">
-              <div className="absolute -inset-1 bg-blue-700/10 blur-2xl group-hover:bg-blue-700/20 transition-all rounded-lg"></div>
-              <div className="relative h-full bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-blue-700/50 rounded-lg p-8 transition-all">
+              <div className="absolute -inset-1 bg-royal-700/10 blur-2xl group-hover:bg-royal-700/20 transition-all rounded-lg"></div>
+              <div className="relative h-full bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-royal-700/50 rounded-lg p-8 transition-all">
                 <div className="mb-6">
-                  <div className="inline-block p-4 bg-blue-700/20 border-2 border-blue-700 rounded-lg group-hover:scale-110 transition-transform">
-                    <benefit.icon className="h-8 w-8 text-blue-700" strokeWidth={2.5} />
+                  <div className="inline-block p-4 bg-royal-700/20 border-2 border-royal-700 rounded-lg group-hover:scale-110 transition-transform">
+                    <benefit.icon className="h-8 w-8 text-royal-700" strokeWidth={2.5} />
                   </div>
                 </div>
 
@@ -76,11 +76,11 @@ export default function Career() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="relative group">
-            <div className="absolute -inset-1 bg-blue-700/10 blur-2xl group-hover:bg-blue-700/20 transition-all rounded-lg"></div>
+            <div className="absolute -inset-1 bg-royal-700/10 blur-2xl group-hover:bg-royal-700/20 transition-all rounded-lg"></div>
             <div className="relative bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 rounded-lg p-10">
               <div className="flex items-center gap-4 mb-8">
-                <div className="p-4 bg-blue-700/20 border-2 border-blue-700 rounded-lg">
-                  <Briefcase className="h-10 w-10 text-blue-700" strokeWidth={2.5} />
+                <div className="p-4 bg-royal-700/20 border-2 border-royal-700 rounded-lg">
+                  <Briefcase className="h-10 w-10 text-royal-700" strokeWidth={2.5} />
                 </div>
                 <h3 className="text-3xl font-black text-gray-900 tracking-tight">
                   Offene Stellen
@@ -89,9 +89,9 @@ export default function Career() {
 
               <div className="space-y-4">
                 {positions.map((position, index) => (
-                  <div key={index} className="flex items-start space-x-4 p-4 bg-gray-50 border border-gray-200 rounded-lg hover:border-blue-700/50 transition-all">
+                  <div key={index} className="flex items-start space-x-4 p-4 bg-gray-50 border border-gray-200 rounded-lg hover:border-royal-700/50 transition-all">
                     <div className="flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-blue-700 rounded-full"></div>
+                      <div className="w-2 h-2 bg-royal-700 rounded-full"></div>
                     </div>
                     <span className="text-gray-600 font-medium">
                       {position}
@@ -103,8 +103,8 @@ export default function Career() {
           </div>
 
           <div className="relative group">
-            <div className="absolute -inset-1 bg-blue-700/10 blur-2xl group-hover:bg-blue-700/20 transition-all rounded-lg"></div>
-            <div className="relative bg-gradient-to-br from-blue-50 to-gray-50 backdrop-blur-sm border-2 border-blue-700/50 rounded-lg p-10">
+            <div className="absolute -inset-1 bg-royal-700/10 blur-2xl group-hover:bg-royal-700/20 transition-all rounded-lg"></div>
+            <div className="relative bg-gradient-to-br from-royal-50 to-gray-50 backdrop-blur-sm border-2 border-royal-700/50 rounded-lg p-10">
               <h3 className="text-3xl font-black text-gray-900 mb-6 tracking-tight">
                 Das bringst du mit
               </h3>
@@ -120,7 +120,7 @@ export default function Career() {
                 ].map((item, index) => (
                   <li key={index} className="flex items-start space-x-4">
                     <div className="flex-shrink-0 mt-1">
-                      <div className="w-6 h-6 bg-blue-700 border-2 border-blue-700 rounded-sm flex items-center justify-center">
+                      <div className="w-6 h-6 bg-royal-700 border-2 border-royal-700 rounded-sm flex items-center justify-center">
                         <CheckCircle className="h-4 w-4 text-white" strokeWidth={3} />
                       </div>
                     </div>
@@ -129,12 +129,12 @@ export default function Career() {
                 ))}
               </ul>
 
-              <div className="bg-gray-50 backdrop-blur-sm border-2 border-blue-700 rounded-lg p-6">
+              <div className="bg-gray-50 backdrop-blur-sm border-2 border-royal-700 rounded-lg p-6">
                 <p className="text-gray-900 text-lg font-bold mb-2">
                   Interesse geweckt?
                 </p>
                 <p className="text-gray-600 font-medium">
-                  Sende deine Bewerbung an <a href="mailto:karriere@elbwacht.de" className="text-blue-700 hover:text-blue-600 underline">karriere@elbwacht.de</a>
+                  Sende deine Bewerbung an <a href="mailto:karriere@elbwacht.de" className="text-royal-700 hover:text-royal-600 underline">karriere@elbwacht.de</a>
                 </p>
               </div>
             </div>

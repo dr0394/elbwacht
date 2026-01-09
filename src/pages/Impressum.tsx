@@ -8,17 +8,17 @@ export default function Impressum() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center space-x-3">
-              <div className="p-2 bg-gradient-to-br from-blue-600 to-blue-800 border-2 border-blue-500">
+              <div className="p-2 bg-gradient-to-br from-royal-600 to-royal-800 border-2 border-royal-600">
                 <Shield className="h-8 w-8 text-white" strokeWidth={2.5} />
               </div>
               <div>
                 <div className="text-gray-900 font-black text-xl tracking-wide">ELBWACHT</div>
-                <div className="text-blue-700 text-xs font-bold tracking-widest">SECURITY SERVICE</div>
+                <div className="text-royal-700 text-xs font-bold tracking-widest">SECURITY SERVICE</div>
               </div>
             </Link>
             <Link
               to="/"
-              className="flex items-center space-x-2 text-gray-600 hover:text-blue-700 transition-colors font-medium"
+              className="flex items-center space-x-2 text-gray-600 hover:text-royal-700 transition-colors font-medium"
             >
               <ArrowLeft className="h-5 w-5" />
               <span>Zurück zur Startseite</span>
