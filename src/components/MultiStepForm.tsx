@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { X, ChevronRight, ChevronLeft, MessageCircle, Mail, CheckCircle } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext';
 
 interface MultiStepFormProps {
   onClose: () => void;
 }
 
 export default function MultiStepForm({ onClose }: MultiStepFormProps) {
-  const { theme } = useTheme();
   const [step, setStep] = useState(1);
   const [sendVia, setSendVia] = useState<'whatsapp' | 'email' | 'both'>('both');
   const [formData, setFormData] = useState({
@@ -106,38 +104,30 @@ ${formData.name}`;
 
   return (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className={`border-2 border-red-600/30 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-red-600/20 ${
-        theme === 'dark'
-          ? 'bg-gradient-to-br from-gray-900 to-black'
-          : 'bg-gradient-to-br from-white to-gray-50'
-      }`}>
-        <div className={`sticky top-0 border-b-2 border-red-600/50 p-6 flex items-center justify-between ${
-          theme === 'dark'
-            ? 'bg-gradient-to-r from-black via-gray-900 to-black text-white'
-            : 'bg-gradient-to-r from-white via-gray-50 to-white text-gray-900'
-        }`}>
+      <div className="border-2 border-blue-700/30 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-blue-700/20 bg-gradient-to-br from-white to-gray-50">
+        <div className="sticky top-0 border-b-2 border-blue-700/50 p-6 flex items-center justify-between bg-gradient-to-r from-white via-gray-50 to-white text-gray-900">
           <div className="flex-1">
-            <h2 className={`text-2xl font-black mb-3 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Sicherheitsanfrage</h2>
+            <h2 className="text-2xl font-black mb-3 tracking-tight text-gray-900">Sicherheitsanfrage</h2>
             <div className="flex items-center space-x-2">
               {[1, 2, 3, 4].map((s) => (
                 <div key={s} className="flex items-center">
                   <div
                     className={`w-10 h-10 rounded-lg flex items-center justify-center font-black text-sm border-2 transition-all ${
                       step >= s
-                        ? 'bg-red-600 text-white border-red-600 shadow-lg shadow-red-600/50'
-                        : 'bg-gray-800 text-gray-500 border-gray-700'
+                        ? 'bg-blue-700 text-white border-blue-700 shadow-lg shadow-blue-700/50'
+                        : 'bg-gray-200 text-gray-500 border-gray-300'
                     }`}
                   >
                     {s}
                   </div>
-                  {s < 4 && <div className={`w-6 h-1 rounded-full transition-all ${step > s ? 'bg-red-600' : 'bg-gray-800'}`}></div>}
+                  {s < 4 && <div className={`w-6 h-1 rounded-full transition-all ${step > s ? 'bg-blue-700' : 'bg-gray-200'}`}></div>}
                 </div>
               ))}
             </div>
           </div>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-red-500 transition-colors p-2 hover:bg-red-600/10 rounded-lg"
+            className="text-gray-400 hover:text-blue-700 transition-colors p-2 hover:bg-blue-700/10 rounded-lg"
           >
             <X className="h-6 w-6" strokeWidth={2.5} />
           </button>
@@ -146,7 +136,7 @@ ${formData.name}`;
         <div className="p-8">
           {step === 1 && (
             <div>
-              <h3 className={`text-2xl font-black mb-6 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Welche Leistung benötigen Sie?</h3>
+              <h3 className="text-2xl font-black mb-6 tracking-tight text-gray-900">Welche Leistung benötigen Sie?</h3>
               <div className="space-y-3">
                 {[
                   'Objektschutz',
@@ -162,10 +152,8 @@ ${formData.name}`;
                     onClick={() => handleInputChange('service', service)}
                     className={`w-full p-4 text-left border-2 rounded-lg transition-all font-semibold ${
                       formData.service === service
-                        ? 'border-red-600 bg-red-600/20 shadow-lg shadow-red-600/20' + (theme === 'dark' ? ' text-white' : ' text-gray-900')
-                        : (theme === 'dark'
-                          ? 'border-gray-700 bg-gray-800/50 text-gray-300 hover:border-red-600/50 hover:bg-red-600/10'
-                          : 'border-gray-300 bg-white text-gray-700 hover:border-red-600/50 hover:bg-red-50')
+                        ? 'border-blue-700 bg-blue-700/20 shadow-lg shadow-blue-700/20 text-gray-900'
+                        : 'border-gray-300 bg-white text-gray-700 hover:border-blue-700/50 hover:bg-blue-50'
                     }`}
                   >
                     {service}
@@ -177,25 +165,21 @@ ${formData.name}`;
 
           {step === 2 && (
             <div>
-              <h3 className={`text-2xl font-black mb-6 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Details zum Einsatz</h3>
+              <h3 className="text-2xl font-black mb-6 tracking-tight text-gray-900">Details zum Einsatz</h3>
               <div className="space-y-6">
                 <div>
-                  <label className={`block text-sm font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Standort / Einsatzort</label>
+                  <label className="block text-sm font-bold mb-2 text-gray-900">Standort / Einsatzort</label>
                   <input
                     type="text"
                     value={formData.location}
                     onChange={(e) => handleInputChange('location', e.target.value)}
                     placeholder="z.B. Hamburg Innenstadt"
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:border-red-600 outline-none transition-all ${
-                      theme === 'dark'
-                        ? 'bg-gray-800/50 border-gray-700 text-white placeholder-gray-500'
-                        : 'bg-white border-gray-300 text-gray-900 placeholder-gray-400'
-                    }`}
+                    className="w-full px-4 py-3 border-2 rounded-lg focus:border-blue-700 outline-none transition-all bg-white border-gray-300 text-gray-900 placeholder-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className={`block text-sm font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Einsatzdauer</label>
+                  <label className="block text-sm font-bold mb-2 text-gray-900">Einsatzdauer</label>
                   <div className="grid grid-cols-2 gap-3">
                     {['Einmalig', 'Mehrere Tage', 'Langfristig', 'Nach Vereinbarung'].map((duration) => (
                       <button
@@ -203,10 +187,8 @@ ${formData.name}`;
                         onClick={() => handleInputChange('duration', duration)}
                         className={`p-3 border-2 rounded-lg transition-all font-semibold ${
                           formData.duration === duration
-                            ? 'border-red-600 bg-red-600/20 shadow-lg shadow-red-600/20' + (theme === 'dark' ? ' text-white' : ' text-gray-900')
-                            : (theme === 'dark'
-                              ? 'border-gray-700 bg-gray-800/50 text-gray-300 hover:border-red-600/50 hover:bg-red-600/10'
-                              : 'border-gray-300 bg-white text-gray-700 hover:border-red-600/50 hover:bg-red-50')
+                            ? 'border-blue-700 bg-blue-700/20 shadow-lg shadow-blue-700/20 text-gray-900'
+                            : 'border-gray-300 bg-white text-gray-700 hover:border-blue-700/50 hover:bg-blue-50'
                         }`}
                       >
                         {duration}
@@ -216,7 +198,7 @@ ${formData.name}`;
                 </div>
 
                 <div>
-                  <label className={`block text-sm font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Wie dringend?</label>
+                  <label className="block text-sm font-bold mb-2 text-gray-900">Wie dringend?</label>
                   <div className="grid grid-cols-2 gap-3">
                     {['Sofort', 'Diese Woche', 'Nächste Woche', 'Langfristige Planung'].map((urgency) => (
                       <button
@@ -224,10 +206,8 @@ ${formData.name}`;
                         onClick={() => handleInputChange('urgency', urgency)}
                         className={`p-3 border-2 rounded-lg transition-all font-semibold ${
                           formData.urgency === urgency
-                            ? 'border-red-600 bg-red-600/20 shadow-lg shadow-red-600/20' + (theme === 'dark' ? ' text-white' : ' text-gray-900')
-                            : (theme === 'dark'
-                              ? 'border-gray-700 bg-gray-800/50 text-gray-300 hover:border-red-600/50 hover:bg-red-600/10'
-                              : 'border-gray-300 bg-white text-gray-700 hover:border-red-600/50 hover:bg-red-50')
+                            ? 'border-blue-700 bg-blue-700/20 shadow-lg shadow-blue-700/20 text-gray-900'
+                            : 'border-gray-300 bg-white text-gray-700 hover:border-blue-700/50 hover:bg-blue-50'
                         }`}
                       >
                         {urgency}
@@ -241,67 +221,51 @@ ${formData.name}`;
 
           {step === 3 && (
             <div>
-              <h3 className={`text-2xl font-black mb-6 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Ihre Kontaktdaten</h3>
+              <h3 className="text-2xl font-black mb-6 tracking-tight text-gray-900">Ihre Kontaktdaten</h3>
               <div className="space-y-4">
                 <div>
-                  <label className={`block text-sm font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Name *</label>
+                  <label className="block text-sm font-bold mb-2 text-gray-900">Name *</label>
                   <input
                     type="text"
                     value={formData.name}
                     onChange={(e) => handleInputChange('name', e.target.value)}
                     placeholder="Ihr Name"
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:border-red-600 outline-none transition-all ${
-                      theme === 'dark'
-                        ? 'bg-gray-800/50 border-gray-700 text-white placeholder-gray-500'
-                        : 'bg-white border-gray-300 text-gray-900 placeholder-gray-400'
-                    }`}
+                    className="w-full px-4 py-3 border-2 rounded-lg focus:border-blue-700 outline-none transition-all bg-white border-gray-300 text-gray-900 placeholder-gray-400"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className={`block text-sm font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Unternehmen</label>
+                  <label className="block text-sm font-bold mb-2 text-gray-900">Unternehmen</label>
                   <input
                     type="text"
                     value={formData.company}
                     onChange={(e) => handleInputChange('company', e.target.value)}
                     placeholder="Ihr Unternehmen (optional)"
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:border-red-600 outline-none transition-all ${
-                      theme === 'dark'
-                        ? 'bg-gray-800/50 border-gray-700 text-white placeholder-gray-500'
-                        : 'bg-white border-gray-300 text-gray-900 placeholder-gray-400'
-                    }`}
+                    className="w-full px-4 py-3 border-2 rounded-lg focus:border-blue-700 outline-none transition-all bg-white border-gray-300 text-gray-900 placeholder-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className={`block text-sm font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Telefon *</label>
+                  <label className="block text-sm font-bold mb-2 text-gray-900">Telefon *</label>
                   <input
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
                     placeholder="+494025330294"
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:border-red-600 outline-none transition-all ${
-                      theme === 'dark'
-                        ? 'bg-gray-800/50 border-gray-700 text-white placeholder-gray-500'
-                        : 'bg-white border-gray-300 text-gray-900 placeholder-gray-400'
-                    }`}
+                    className="w-full px-4 py-3 border-2 rounded-lg focus:border-blue-700 outline-none transition-all bg-white border-gray-300 text-gray-900 placeholder-gray-400"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className={`block text-sm font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>E-Mail *</label>
+                  <label className="block text-sm font-bold mb-2 text-gray-900">E-Mail *</label>
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
                     placeholder="ihre@email.de"
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:border-red-600 outline-none transition-all ${
-                      theme === 'dark'
-                        ? 'bg-gray-800/50 border-gray-700 text-white placeholder-gray-500'
-                        : 'bg-white border-gray-300 text-gray-900 placeholder-gray-400'
-                    }`}
+                    className="w-full px-4 py-3 border-2 rounded-lg focus:border-blue-700 outline-none transition-all bg-white border-gray-300 text-gray-900 placeholder-gray-400"
                     required
                   />
                 </div>
@@ -311,9 +275,9 @@ ${formData.name}`;
 
           {step === 4 && (
             <div>
-              <h3 className={`text-2xl font-black mb-6 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Zusätzliche Informationen</h3>
+              <h3 className="text-2xl font-black mb-6 tracking-tight text-gray-900">Zusätzliche Informationen</h3>
               <div>
-                <label className={`block text-sm font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                <label className="block text-sm font-bold mb-2 text-gray-900">
                   Haben Sie noch weitere Anmerkungen oder spezielle Anforderungen?
                 </label>
                 <textarea
@@ -321,45 +285,39 @@ ${formData.name}`;
                   onChange={(e) => handleInputChange('message', e.target.value)}
                   placeholder="Beschreiben Sie hier Ihre spezifischen Anforderungen..."
                   rows={4}
-                  className={`w-full px-4 py-3 border-2 rounded-lg focus:border-red-600 outline-none transition-all ${
-                    theme === 'dark'
-                      ? 'bg-gray-800/50 border-gray-700 text-white placeholder-gray-500'
-                      : 'bg-white border-gray-300 text-gray-900 placeholder-gray-400'
-                  }`}
+                  className="w-full px-4 py-3 border-2 rounded-lg focus:border-blue-700 outline-none transition-all bg-white border-gray-300 text-gray-900 placeholder-gray-400"
                 ></textarea>
               </div>
 
-              <div className="mt-6 bg-red-600/10 p-6 border-2 border-red-600/30 rounded-lg">
-                <h4 className={`font-black mb-4 text-lg tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Ihre Anfrage im Überblick:</h4>
-                <div className={`space-y-2 text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                  <p><strong className={theme === 'dark' ? 'text-white' : 'text-gray-900'}>Leistung:</strong> {formData.service}</p>
-                  <p><strong className={theme === 'dark' ? 'text-white' : 'text-gray-900'}>Standort:</strong> {formData.location}</p>
-                  <p><strong className={theme === 'dark' ? 'text-white' : 'text-gray-900'}>Dauer:</strong> {formData.duration}</p>
-                  <p><strong className={theme === 'dark' ? 'text-white' : 'text-gray-900'}>Dringlichkeit:</strong> {formData.urgency}</p>
-                  <p><strong className={theme === 'dark' ? 'text-white' : 'text-gray-900'}>Name:</strong> {formData.name}</p>
-                  {formData.company && <p><strong className={theme === 'dark' ? 'text-white' : 'text-gray-900'}>Unternehmen:</strong> {formData.company}</p>}
-                  <p><strong className={theme === 'dark' ? 'text-white' : 'text-gray-900'}>Telefon:</strong> {formData.phone}</p>
-                  <p><strong className={theme === 'dark' ? 'text-white' : 'text-gray-900'}>E-Mail:</strong> {formData.email}</p>
+              <div className="mt-6 bg-blue-700/10 p-6 border-2 border-blue-700/30 rounded-lg">
+                <h4 className="font-black mb-4 text-lg tracking-tight text-gray-900">Ihre Anfrage im Überblick:</h4>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <p><strong className="text-gray-900">Leistung:</strong> {formData.service}</p>
+                  <p><strong className="text-gray-900">Standort:</strong> {formData.location}</p>
+                  <p><strong className="text-gray-900">Dauer:</strong> {formData.duration}</p>
+                  <p><strong className="text-gray-900">Dringlichkeit:</strong> {formData.urgency}</p>
+                  <p><strong className="text-gray-900">Name:</strong> {formData.name}</p>
+                  {formData.company && <p><strong className="text-gray-900">Unternehmen:</strong> {formData.company}</p>}
+                  <p><strong className="text-gray-900">Telefon:</strong> {formData.phone}</p>
+                  <p><strong className="text-gray-900">E-Mail:</strong> {formData.email}</p>
                 </div>
               </div>
 
               <div className="mt-6">
-                <h4 className={`font-black mb-4 text-lg tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Wie möchten Sie die Anfrage senden?</h4>
+                <h4 className="font-black mb-4 text-lg tracking-tight text-gray-900">Wie möchten Sie die Anfrage senden?</h4>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   <button
                     onClick={() => setSendVia('whatsapp')}
                     className={`p-4 border-2 rounded-lg transition-all ${
                       sendVia === 'whatsapp'
-                        ? 'border-red-600 bg-red-600/20 shadow-lg shadow-red-600/20'
-                        : (theme === 'dark'
-                          ? 'border-gray-700 bg-gray-800/50 hover:border-red-600/50 hover:bg-red-600/10'
-                          : 'border-gray-300 bg-white hover:border-red-600/50 hover:bg-red-50')
+                        ? 'border-blue-700 bg-blue-700/20 shadow-lg shadow-blue-700/20'
+                        : 'border-gray-300 bg-white hover:border-blue-700/50 hover:bg-blue-50'
                     }`}
                   >
                     <div className="flex flex-col items-center gap-2">
                       <MessageCircle className="h-6 w-6 text-green-500" />
-                      <span className={`font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>WhatsApp</span>
-                      {sendVia === 'whatsapp' && <CheckCircle className="h-4 w-4 text-red-500" />}
+                      <span className="font-bold text-gray-900">WhatsApp</span>
+                      {sendVia === 'whatsapp' && <CheckCircle className="h-4 w-4 text-blue-700" />}
                     </div>
                   </button>
 
@@ -367,16 +325,14 @@ ${formData.name}`;
                     onClick={() => setSendVia('email')}
                     className={`p-4 border-2 rounded-lg transition-all ${
                       sendVia === 'email'
-                        ? 'border-red-600 bg-red-600/20 shadow-lg shadow-red-600/20'
-                        : (theme === 'dark'
-                          ? 'border-gray-700 bg-gray-800/50 hover:border-red-600/50 hover:bg-red-600/10'
-                          : 'border-gray-300 bg-white hover:border-red-600/50 hover:bg-red-50')
+                        ? 'border-blue-700 bg-blue-700/20 shadow-lg shadow-blue-700/20'
+                        : 'border-gray-300 bg-white hover:border-blue-700/50 hover:bg-blue-50'
                     }`}
                   >
                     <div className="flex flex-col items-center gap-2">
                       <Mail className="h-6 w-6 text-blue-500" />
-                      <span className={`font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>E-Mail</span>
-                      {sendVia === 'email' && <CheckCircle className="h-4 w-4 text-red-500" />}
+                      <span className="font-bold text-gray-900">E-Mail</span>
+                      {sendVia === 'email' && <CheckCircle className="h-4 w-4 text-blue-700" />}
                     </div>
                   </button>
 
@@ -384,10 +340,8 @@ ${formData.name}`;
                     onClick={() => setSendVia('both')}
                     className={`p-4 border-2 rounded-lg transition-all ${
                       sendVia === 'both'
-                        ? 'border-red-600 bg-red-600/20 shadow-lg shadow-red-600/20'
-                        : (theme === 'dark'
-                          ? 'border-gray-700 bg-gray-800/50 hover:border-red-600/50 hover:bg-red-600/10'
-                          : 'border-gray-300 bg-white hover:border-red-600/50 hover:bg-red-50')
+                        ? 'border-blue-700 bg-blue-700/20 shadow-lg shadow-blue-700/20'
+                        : 'border-gray-300 bg-white hover:border-blue-700/50 hover:bg-blue-50'
                     }`}
                   >
                     <div className="flex flex-col items-center gap-2">
@@ -395,14 +349,14 @@ ${formData.name}`;
                         <MessageCircle className="h-5 w-5 text-green-500" />
                         <Mail className="h-5 w-5 text-blue-500" />
                       </div>
-                      <span className={`font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Beides</span>
-                      {sendVia === 'both' && <CheckCircle className="h-4 w-4 text-red-500" />}
+                      <span className="font-bold text-gray-900">Beides</span>
+                      {sendVia === 'both' && <CheckCircle className="h-4 w-4 text-blue-700" />}
                     </div>
                   </button>
                 </div>
               </div>
 
-              <p className={`mt-6 text-sm leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+              <p className="mt-6 text-sm leading-relaxed text-gray-600">
                 Mit dem Absenden erklären Sie sich mit unserer Datenschutzerklärung einverstanden.
                 {sendVia === 'whatsapp' && ' Ihre Anfrage wird per WhatsApp an uns gesendet.'}
                 {sendVia === 'email' && ' Ihre Anfrage wird per E-Mail an uns gesendet.'}
@@ -412,18 +366,14 @@ ${formData.name}`;
           )}
         </div>
 
-        <div className={`sticky bottom-0 border-t-2 border-red-600/50 p-6 flex items-center justify-between ${
-          theme === 'dark'
-            ? 'bg-gradient-to-r from-black via-gray-900 to-black'
-            : 'bg-gradient-to-r from-white via-gray-50 to-white'
-        }`}>
+        <div className="sticky bottom-0 border-t-2 border-blue-700/50 p-6 flex items-center justify-between bg-gradient-to-r from-white via-gray-50 to-white">
           <button
             onClick={handleBack}
             disabled={step === 1}
             className={`flex items-center space-x-2 px-6 py-3 font-bold rounded-lg transition-all ${
               step === 1
-                ? (theme === 'dark' ? 'text-gray-600' : 'text-gray-400') + ' cursor-not-allowed'
-                : (theme === 'dark' ? 'text-white hover:text-red-500' : 'text-gray-900 hover:text-red-500') + ' hover:bg-red-600/10'
+                ? 'text-gray-400 cursor-not-allowed'
+                : 'text-gray-900 hover:text-blue-700 hover:bg-blue-700/10'
             }`}
           >
             <ChevronLeft className="h-5 w-5" strokeWidth={2.5} />
@@ -436,10 +386,8 @@ ${formData.name}`;
               disabled={!isStepValid()}
               className={`flex items-center space-x-2 px-8 py-3 font-black rounded-lg transition-all ${
                 isStepValid()
-                  ? 'bg-red-600 text-white hover:bg-red-700 shadow-lg shadow-red-600/30'
-                  : (theme === 'dark'
-                    ? 'bg-gray-800 text-gray-500 cursor-not-allowed border-2 border-gray-700'
-                    : 'bg-gray-200 text-gray-400 cursor-not-allowed border-2 border-gray-300')
+                  ? 'bg-blue-700 text-white hover:bg-blue-800 shadow-lg shadow-blue-700/30'
+                  : 'bg-gray-200 text-gray-400 cursor-not-allowed border-2 border-gray-300'
               }`}
             >
               <span>Weiter</span>
@@ -448,7 +396,7 @@ ${formData.name}`;
           ) : (
             <button
               onClick={handleSubmit}
-              className="bg-red-600 text-white px-8 py-3 font-black rounded-lg hover:bg-red-700 transition-all shadow-lg shadow-red-600/30"
+              className="bg-blue-700 text-white px-8 py-3 font-black rounded-lg hover:bg-blue-800 transition-all shadow-lg shadow-blue-700/30"
             >
               Anfrage absenden
             </button>
