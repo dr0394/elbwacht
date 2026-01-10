@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import ProblemSolution from '../components/ProblemSolution';
-import TrustBadge from '../components/TrustBadge';
 import Services from '../components/Services';
 import QuarterSecurity from '../components/QuarterSecurity';
 import WhyUs from '../components/WhyUs';
@@ -25,7 +24,6 @@ export default function Home() {
       <Navigation onOpenForm={() => setShowForm(true)} />
       <HeroSection onOpenForm={() => setShowForm(true)} />
       <ProblemSolution />
-      <TrustBadge />
       <Services />
       <QuarterSecurity />
       <WhyUs />
