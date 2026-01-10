@@ -9,7 +9,6 @@ import AboutUs from '../components/AboutUs';
 import Certifications from '../components/Certifications';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
-import Career from '../components/Career';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
@@ -31,7 +30,6 @@ export default function Home() {
       <Certifications />
       <Testimonials />
       <FAQ />
-      <Career />
       <Contact onOpenForm={() => setShowForm(true)} />
       <Footer />
       <WhatsAppButton />
