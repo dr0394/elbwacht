@@ -29,7 +29,7 @@ export default function Contact({ onOpenForm }: ContactProps) {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-12">
+        <div className="max-w-7xl mx-auto space-y-12">
           <div className="relative group">
             <div
               className="absolute -inset-2 blur-2xl rounded-lg"
@@ -89,7 +89,7 @@ export default function Contact({ onOpenForm }: ContactProps) {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="relative group">
               <div
                 className="absolute -inset-1 blur-2xl group-hover:opacity-100 opacity-50 transition-all rounded-lg"
@@ -97,31 +97,27 @@ export default function Contact({ onOpenForm }: ContactProps) {
                   background: 'radial-gradient(circle, rgba(13,21,45,0.15) 0%, transparent 70%)',
                 }}
               ></div>
-              <div className="relative bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-white/30 rounded-lg p-8 transition-all">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
+              <div className="relative bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-white/30 rounded-lg p-6 transition-all h-full flex flex-col">
+                <div className="flex flex-col items-center text-center flex-1">
+                  <div
+                    className="p-4 border-2 border-white/20 rounded-lg relative overflow-hidden group-hover:scale-105 transition-transform mb-4"
+                    style={{
+                      background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                    }}
+                  >
                     <div
-                      className="p-4 border-2 border-white/20 rounded-lg relative overflow-hidden group-hover:scale-105 transition-transform"
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{
-                        background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                        background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
                       }}
-                    >
-                      <div
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{
-                          background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
-                        }}
-                      />
-                      <Phone className="h-8 w-8 text-white relative z-10" strokeWidth={2.5} />
-                    </div>
+                    />
+                    <Phone className="h-7 w-7 text-white relative z-10" strokeWidth={2.5} />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-black text-gray-900 mb-3 tracking-tight">Telefon</h3>
-                    <a href="tel:+4940123456789" className="text-gray-600 hover:bg-gradient-to-r hover:from-royal-700 hover:to-royal-500 hover:bg-clip-text hover:text-transparent transition-all text-lg font-medium">
-                      +49 40 25330294
-                    </a>
-                    <p className="text-gray-700 mt-2 font-medium">24/7 Notrufhotline</p>
-                  </div>
+                  <h3 className="text-lg font-black text-gray-900 mb-3 tracking-tight">Telefon</h3>
+                  <a href="tel:+4940123456789" className="text-gray-600 hover:bg-gradient-to-r hover:from-royal-700 hover:to-royal-500 hover:bg-clip-text hover:text-transparent transition-all text-base font-medium break-all">
+                    +49 40 25330294
+                  </a>
+                  <p className="text-gray-700 mt-2 font-medium text-sm">24/7 Notrufhotline</p>
                 </div>
               </div>
             </div>
@@ -133,31 +129,27 @@ export default function Contact({ onOpenForm }: ContactProps) {
                   background: 'radial-gradient(circle, rgba(13,21,45,0.15) 0%, transparent 70%)',
                 }}
               ></div>
-              <div className="relative bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-white/30 rounded-lg p-8 transition-all">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
+              <div className="relative bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-white/30 rounded-lg p-6 transition-all h-full flex flex-col">
+                <div className="flex flex-col items-center text-center flex-1">
+                  <div
+                    className="p-4 border-2 border-white/20 rounded-lg relative overflow-hidden group-hover:scale-105 transition-transform mb-4"
+                    style={{
+                      background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                    }}
+                  >
                     <div
-                      className="p-4 border-2 border-white/20 rounded-lg relative overflow-hidden group-hover:scale-105 transition-transform"
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{
-                        background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                        background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
                       }}
-                    >
-                      <div
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{
-                          background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
-                        }}
-                      />
-                      <Mail className="h-8 w-8 text-white relative z-10" strokeWidth={2.5} />
-                    </div>
+                    />
+                    <Mail className="h-7 w-7 text-white relative z-10" strokeWidth={2.5} />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-black text-gray-900 mb-3 tracking-tight">E-Mail</h3>
-                    <a href="mailto:info@elbwacht.de" className="text-gray-600 hover:bg-gradient-to-r hover:from-royal-700 hover:to-royal-500 hover:bg-clip-text hover:text-transparent transition-all text-lg font-medium">
-                      info@elbwacht.de
-                    </a>
-                    <p className="text-gray-700 mt-2 font-medium">Antwort innerhalb von 24h</p>
-                  </div>
+                  <h3 className="text-lg font-black text-gray-900 mb-3 tracking-tight">E-Mail</h3>
+                  <a href="mailto:info@elbwacht.de" className="text-gray-600 hover:bg-gradient-to-r hover:from-royal-700 hover:to-royal-500 hover:bg-clip-text hover:text-transparent transition-all text-base font-medium break-all">
+                    info@elbwacht.de
+                  </a>
+                  <p className="text-gray-700 mt-2 font-medium text-sm">Antwort innerhalb von 24h</p>
                 </div>
               </div>
             </div>
@@ -169,32 +161,28 @@ export default function Contact({ onOpenForm }: ContactProps) {
                   background: 'radial-gradient(circle, rgba(13,21,45,0.15) 0%, transparent 70%)',
                 }}
               ></div>
-              <div className="relative bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-white/30 rounded-lg p-8 transition-all">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
+              <div className="relative bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-white/30 rounded-lg p-6 transition-all h-full flex flex-col">
+                <div className="flex flex-col items-center text-center flex-1">
+                  <div
+                    className="p-4 border-2 border-white/20 rounded-lg relative overflow-hidden group-hover:scale-105 transition-transform mb-4"
+                    style={{
+                      background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                    }}
+                  >
                     <div
-                      className="p-4 border-2 border-white/20 rounded-lg relative overflow-hidden group-hover:scale-105 transition-transform"
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{
-                        background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                        background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
                       }}
-                    >
-                      <div
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{
-                          background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
-                        }}
-                      />
-                      <MapPin className="h-8 w-8 text-white relative z-10" strokeWidth={2.5} />
-                    </div>
+                    />
+                    <MapPin className="h-7 w-7 text-white relative z-10" strokeWidth={2.5} />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-black text-gray-900 mb-3 tracking-tight">Adresse</h3>
-                    <p className="text-gray-600 text-lg font-medium">
-                      Elbwacht Security Service GmbH<br />
-                      Wandsbeker Chaussee 11<br />
-                      22089 Hamburg
-                    </p>
-                  </div>
+                  <h3 className="text-lg font-black text-gray-900 mb-3 tracking-tight">Adresse</h3>
+                  <p className="text-gray-600 text-base font-medium">
+                    Elbwacht Security Service GmbH<br />
+                    Wandsbeker Chaussee 11<br />
+                    22089 Hamburg
+                  </p>
                 </div>
               </div>
             </div>
@@ -206,33 +194,29 @@ export default function Contact({ onOpenForm }: ContactProps) {
                   background: 'radial-gradient(circle, rgba(13,21,45,0.15) 0%, transparent 70%)',
                 }}
               ></div>
-              <div className="relative bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-white/30 rounded-lg p-8 transition-all">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
+              <div className="relative bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-white/30 rounded-lg p-6 transition-all h-full flex flex-col">
+                <div className="flex flex-col items-center text-center flex-1">
+                  <div
+                    className="p-4 border-2 border-white/20 rounded-lg relative overflow-hidden group-hover:scale-105 transition-transform mb-4"
+                    style={{
+                      background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                    }}
+                  >
                     <div
-                      className="p-4 border-2 border-white/20 rounded-lg relative overflow-hidden group-hover:scale-105 transition-transform"
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{
-                        background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                        background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
                       }}
-                    >
-                      <div
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{
-                          background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
-                        }}
-                      />
-                      <Clock className="h-8 w-8 text-white relative z-10" strokeWidth={2.5} />
-                    </div>
+                    />
+                    <Clock className="h-7 w-7 text-white relative z-10" strokeWidth={2.5} />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-black text-gray-900 mb-3 tracking-tight">Erreichbarkeit</h3>
-                    <p className="text-gray-600 text-lg font-medium mb-2">
-                      Mo - Fr: 08:00 - 18:00 Uhr
-                    </p>
-                    <p className="font-bold bg-gradient-to-r from-royal-700 to-royal-500 bg-clip-text text-transparent">
-                      24/7 Notfall-Hotline
-                    </p>
-                  </div>
+                  <h3 className="text-lg font-black text-gray-900 mb-3 tracking-tight">Erreichbarkeit</h3>
+                  <p className="text-gray-600 text-base font-medium mb-2">
+                    Mo - Fr: 08:00 - 18:00 Uhr
+                  </p>
+                  <p className="font-bold bg-gradient-to-r from-royal-700 to-royal-500 bg-clip-text text-transparent text-sm">
+                    24/7 Notfall-Hotline
+                  </p>
                 </div>
               </div>
             </div>
