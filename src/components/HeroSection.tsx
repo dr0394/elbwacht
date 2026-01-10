@@ -1,4 +1,4 @@
-import { Check, Phone, Shield, Radio } from 'lucide-react';
+import { Phone, Shield, Radio } from 'lucide-react';
 
 interface HeroSectionProps {
   onOpenForm: () => void;
@@ -40,6 +40,37 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
             <p className="text-lg lg:text-xl mb-10 font-medium leading-relaxed text-gray-700">
               Elbawacht ist Ihr verlässlicher Partner für Objektschutz, Eventschutz und Sicherheitsservice aller Art – mit geschultem Personal, klaren Abläufen und schneller Reaktion, wenn es darauf ankommt.
             </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <button
+                onClick={onOpenForm}
+                className="group relative border border-white/20 text-white px-10 py-5 text-base font-bold rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden"
+                style={{
+                  background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                }}
+              >
+                <span className="relative z-10">Jetzt unverbindlich anfragen</span>
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)',
+                  }}
+                ></div>
+              </button>
+              <a
+                href="tel:+4940253302940"
+                className="border-2 backdrop-blur-sm px-10 py-5 text-base font-bold rounded-full transition-all flex items-center justify-center space-x-3 group border-gray-300 bg-white/50 text-gray-900 hover:bg-gray-100 hover:shadow-lg relative overflow-hidden"
+              >
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(13,21,45,0.05) 0%, rgba(33,53,113,0.05) 100%)',
+                  }}
+                />
+                <Phone className="h-5 w-5 group-hover:animate-pulse relative z-10" />
+                <span className="relative z-10">040 / 25330294</span>
+              </a>
+            </div>
 
             <div className="lg:hidden relative mb-10">
               <div
@@ -89,69 +120,6 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div
-              className="space-y-4 mb-10 backdrop-blur-sm border-l-2 p-6 rounded-r-lg relative overflow-hidden"
-              style={{
-                background: 'linear-gradient(90deg, rgba(13,21,45,0.05) 0%, transparent 100%)',
-                borderImage: 'linear-gradient(180deg, #0d152d 0%, #213571 100%) 1',
-              }}
-            >
-              {[
-                'Professionelles, geschultes Personal mit §34a Qualifikation',
-                '24/7 Erreichbarkeit mit schnellen Reaktionszeiten',
-                'Klare Abläufe & rechtssichere Dokumentation'
-              ].map((item, index) => (
-                <div key={index} className="flex items-start space-x-4 group">
-                  <div
-                    className="flex-shrink-0 w-6 h-6 border-2 border-white/20 rounded-sm flex items-center justify-center group-hover:scale-110 transition-all duration-300 relative overflow-hidden"
-                    style={{
-                      background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
-                    }}
-                  >
-                    <div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{
-                        background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
-                      }}
-                    />
-                    <Check className="h-4 w-4 text-white relative z-10" strokeWidth={3} />
-                  </div>
-                  <span className="font-medium transition-colors text-gray-700 group-hover:text-gray-900">{item}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={onOpenForm}
-                className="group relative border border-white/20 text-white px-10 py-5 text-base font-bold rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden"
-                style={{
-                  background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
-                }}
-              >
-                <span className="relative z-10">Jetzt unverbindlich anfragen</span>
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)',
-                  }}
-                ></div>
-              </button>
-              <a
-                href="tel:+4940253302940"
-                className="border-2 backdrop-blur-sm px-10 py-5 text-base font-bold rounded-full transition-all flex items-center justify-center space-x-3 group border-gray-300 bg-white/50 text-gray-900 hover:bg-gray-100 hover:shadow-lg relative overflow-hidden"
-              >
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(13,21,45,0.05) 0%, rgba(33,53,113,0.05) 100%)',
-                  }}
-                />
-                <Phone className="h-5 w-5 group-hover:animate-pulse relative z-10" />
-                <span className="relative z-10">040 / 25330294</span>
-              </a>
             </div>
           </div>
 
@@ -216,6 +184,54 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-2 mt-12">
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: 'Sicherheit mit Verantwortung',
+                  description: 'Unsere Sicherheitskräfte handeln vorausschauend, deeskalierend und verantwortungsbewusst – immer im Einklang mit geltendem Recht und Ihren individuellen Anforderungen.'
+                },
+                {
+                  title: 'Stärke durch sichtbare Präsenz',
+                  description: 'Präsenz schafft Sicherheit. Unsere Mitarbeitenden sind sichtbar, ansprechbar und konsequent – zur Abschreckung, Prävention und schnellen Intervention.'
+                },
+                {
+                  title: 'Persönlich. Professionell. Verlässlich.',
+                  description: 'Keine anonyme Sicherheitsfirma: Bei Elbawacht haben Sie feste Ansprechpartner, klare Abläufe und einen Partner, auf den Sie sich jederzeit verlassen können.'
+                }
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="backdrop-blur-sm border-2 p-6 rounded-lg relative overflow-hidden group hover:scale-105 transition-all duration-300"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(13,21,45,0.05) 0%, rgba(33,53,113,0.03) 100%)',
+                    borderColor: 'rgba(13,21,45,0.2)',
+                  }}
+                >
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(13,21,45,0.08) 0%, rgba(33,53,113,0.05) 100%)',
+                    }}
+                  />
+                  <div className="relative">
+                    <div className="flex items-start space-x-3 mb-3">
+                      <div
+                        className="flex-shrink-0 w-2 h-2 rounded-full mt-2"
+                        style={{
+                          background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                          boxShadow: '0 0 10px rgba(13,21,45,0.5)',
+                        }}
+                      />
+                      <h3 className="font-black text-lg leading-tight text-gray-900">{item.title}</h3>
+                    </div>
+                    <p className="text-sm font-medium leading-relaxed text-gray-700 pl-5">{item.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
