@@ -19,18 +19,6 @@ const faqs = [
     answer: 'Ja, wir sind 24 Stunden am Tag, 7 Tage die Woche erreichbar. Unsere Notrufzentrale ist durchgehend besetzt und kann bei Bedarf sofort Personal entsenden. Auch an Feiertagen stehen wir Ihnen zur Verfügung.'
   },
   {
-    question: 'Welche Versicherungen bestehen für die Sicherheitsmitarbeiter?',
-    answer: 'Alle unsere Mitarbeiter sind vollständig versichert. Wir verfügen über eine umfassende Betriebs-Haftpflichtversicherung sowie alle gesetzlich vorgeschriebenen Versicherungen. Im Schadensfall sind Sie als Kunde optimal abgesichert.'
-  },
-  {
-    question: 'Wie flexibel sind die Vertragslaufzeiten?',
-    answer: 'Wir bieten sowohl langfristige Verträge als auch flexible Kurzzeitlösungen an. Ob permanenter Objektschutz, einzelne Events oder projektbezogene Einsätze - wir passen uns Ihren Bedürfnissen an. Sprechen Sie uns einfach auf Ihre Anforderungen an.'
-  },
-  {
-    question: 'Können Sie auch kurzfristig zusätzliches Personal bereitstellen?',
-    answer: 'Ja, dank unseres großen Mitarbeiterpools können wir auch kurzfristig aufstocken. Dies ist besonders bei Veranstaltungen oder besonderen Situationen wichtig. Kontaktieren Sie uns rechtzeitig, damit wir die beste Lösung für Sie finden können.'
-  },
-  {
     question: 'In welchen Regionen sind Sie tätig?',
     answer: 'Unser Haupteinsatzgebiet ist Hamburg und Norddeutschland. Bei größeren Projekten oder langfristigen Aufträgen sind wir auch bundesweit für Sie im Einsatz. Sprechen Sie uns gerne auf Ihre spezifischen Anforderungen an.'
   }
