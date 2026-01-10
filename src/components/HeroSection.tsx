@@ -74,7 +74,7 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
 
             <div className="lg:hidden relative mb-10">
               <div
-                className="relative border-4 border-white/20 overflow-hidden rounded-lg shadow-2xl"
+                className="relative border-4 border-white/20 overflow-hidden rounded-lg shadow-2xl group/image cursor-pointer"
                 style={{
                   borderColor: 'rgba(13,21,45,0.3)',
                 }}
@@ -82,7 +82,7 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
                 <img
                   src="https://i.imgur.com/AROdPLs.jpg"
                   alt="Professioneller Sicherheitsdienst"
-                  className="w-full h-[300px] object-cover object-[center_20%] grayscale contrast-110"
+                  className="w-full h-[300px] object-cover object-[center_20%] grayscale contrast-110 group-hover/image:grayscale-0 group-hover/image:scale-105 transition-all duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                 <div
@@ -132,13 +132,13 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
             ></div>
             <div className="relative">
               <div
-                className="absolute inset-0 border-4 border-white/10 -translate-x-6 -translate-y-6 rounded-lg"
+                className="absolute inset-0 border-4 border-white/10 -translate-x-6 -translate-y-6 rounded-lg transition-all duration-700"
                 style={{
                   borderColor: 'rgba(13,21,45,0.2)',
                 }}
               ></div>
               <div
-                className="relative border-4 border-white/20 overflow-hidden rounded-lg shadow-2xl"
+                className="relative border-4 border-white/20 overflow-hidden rounded-lg shadow-2xl group/image cursor-pointer hover:shadow-3xl transition-all duration-500"
                 style={{
                   borderColor: 'rgba(13,21,45,0.3)',
                 }}
@@ -146,7 +146,7 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
                 <img
                   src="https://i.imgur.com/AROdPLs.jpg"
                   alt="Professioneller Sicherheitsdienst"
-                  className="w-full h-[600px] object-cover object-[center_20%] grayscale contrast-110"
+                  className="w-full h-[600px] object-cover object-[center_20%] grayscale contrast-110 group-hover/image:grayscale-0 group-hover/image:scale-105 transition-all duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                 <div
