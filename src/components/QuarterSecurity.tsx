@@ -78,61 +78,6 @@ export default function QuarterSecurity() {
           </p>
         </div>
 
-        <div
-          className="relative border-2 rounded-lg overflow-hidden mb-12 min-h-[600px] flex items-center"
-          style={{
-            borderColor: 'rgba(255,255,255,0.2)',
-          }}
-        >
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: 'url(https://i.imgur.com/bn62Iiv.jpg)',
-            }}
-          ></div>
-
-          <div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(135deg, rgba(13,21,45,0.85) 0%, rgba(13,21,45,0.75) 50%, rgba(13,21,45,0.85) 100%)',
-            }}
-          ></div>
-
-          <div className="relative z-10 w-full p-8 lg:p-16">
-            <div className="max-w-4xl">
-              <h1 className="text-3xl lg:text-5xl font-black text-white mb-6 leading-tight">
-                Quartiersicherung & Objektüberwachung in Göttingen
-              </h1>
-
-              <h2 className="text-xl lg:text-3xl font-bold text-white/95 mb-4 leading-tight">
-                Referenz: Kontrolle über eine deutschlandweit bekannte Problemimmobilie
-              </h2>
-
-              <h3 className="text-lg lg:text-xl font-bold text-white/85 mb-8 leading-relaxed">
-                Durch strukturierte Objektüberwachung, Präsenz und klare Abläufe konnte eine unkontrollierte Besetzung verhindert werden.
-              </h3>
-
-              <div className="space-y-4 text-white/90 text-base lg:text-lg font-medium leading-relaxed">
-                <p>
-                  Diese Referenz zeigt, wie professionelle Quartiersicherung bei besonders sensiblen Objekten funktioniert.
-                </p>
-                <p>
-                  Bei einer in der Presse vielfach thematisierten Problemimmobilie in Göttingen bestand ein erhöhtes Risiko durch unbefugten Zutritt, Vandalismus und mögliche Besetzung.
-                </p>
-                <p>
-                  Durch gezielte Objektüberwachung, regelmäßige Kontrollgänge und sichtbare Präsenz wurde die Situation stabilisiert und dauerhaft unter Kontrolle gebracht.
-                </p>
-                <p>
-                  Der Fokus lag dabei auf Prävention, Dokumentation und schneller Reaktion – ohne Eskalation.
-                </p>
-                <p>
-                  Diese Maßnahme belegt unsere Erfahrung im Umgang mit leerstehenden Häusern, Problemobjekten und quartalsweiser Quartiersicherung – auch in komplexen Fällen mit öffentlicher Aufmerksamkeit.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {features.map((feature, index) => {
             const Icon = feature.icon;
@@ -178,7 +123,7 @@ export default function QuarterSecurity() {
         </div>
 
         <div
-          className="relative backdrop-blur-sm border-2 p-8 rounded-lg text-center"
+          className="relative backdrop-blur-sm border-2 p-8 rounded-lg text-center mb-12"
           style={{
             background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%)',
             borderColor: 'rgba(255,255,255,0.2)',
@@ -193,6 +138,62 @@ export default function QuarterSecurity() {
           <p className="text-white/90 text-lg font-medium max-w-2xl mx-auto leading-relaxed">
             Wir sind da, bevor etwas passiert. Professionelle Überwachung verhindert Besetzungen, Vandalismus und unbefugte Zutritte durch kontinuierliche Präsenz und dokumentierte Kontrollen.
           </p>
+        </div>
+
+        <div className="text-center mb-8">
+          <h3 className="text-2xl lg:text-4xl font-black text-white mb-3 leading-tight">
+            Quartiersicherung & Objektüberwachung in Göttingen
+          </h3>
+          <h4 className="text-lg lg:text-2xl font-bold text-white/95 leading-tight">
+            Referenz: Kontrolle über eine deutschlandweit bekannte Problemimmobilie
+          </h4>
+        </div>
+
+        <div
+          className="relative border-2 rounded-lg overflow-hidden min-h-[600px] flex items-center"
+          style={{
+            borderColor: 'rgba(255,255,255,0.2)',
+          }}
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(https://i.imgur.com/bn62Iiv.jpg)',
+            }}
+          ></div>
+
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(135deg, rgba(13,21,45,0.85) 0%, rgba(13,21,45,0.75) 50%, rgba(13,21,45,0.85) 100%)',
+            }}
+          ></div>
+
+          <div className="relative z-10 w-full p-8 lg:p-16">
+            <div className="max-w-4xl">
+              <h5 className="text-lg lg:text-xl font-bold text-white/85 mb-8 leading-relaxed">
+                Durch strukturierte Objektüberwachung, Präsenz und klare Abläufe konnte eine unkontrollierte Besetzung verhindert werden.
+              </h5>
+
+              <div className="space-y-4 text-white/90 text-base lg:text-lg font-medium leading-relaxed">
+                <p>
+                  Diese Referenz zeigt, wie professionelle Quartiersicherung bei besonders sensiblen Objekten funktioniert.
+                </p>
+                <p>
+                  Bei einer in der Presse vielfach thematisierten Problemimmobilie in Göttingen bestand ein erhöhtes Risiko durch unbefugten Zutritt, Vandalismus und mögliche Besetzung.
+                </p>
+                <p>
+                  Durch gezielte Objektüberwachung, regelmäßige Kontrollgänge und sichtbare Präsenz wurde die Situation stabilisiert und dauerhaft unter Kontrolle gebracht.
+                </p>
+                <p>
+                  Der Fokus lag dabei auf Prävention, Dokumentation und schneller Reaktion – ohne Eskalation.
+                </p>
+                <p>
+                  Diese Maßnahme belegt unsere Erfahrung im Umgang mit leerstehenden Häusern, Problemobjekten und quartalsweiser Quartiersicherung – auch in komplexen Fällen mit öffentlicher Aufmerksamkeit.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
