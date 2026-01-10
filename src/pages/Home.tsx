@@ -26,7 +26,7 @@ export default function Home() {
       <TrustBadge />
       <Services />
       <QuarterSecurity />
-      <AboutUs />
+      <AboutUs onOpenForm={() => setShowForm(true)} />
       <Certifications />
       <Testimonials />
       <FAQ />

@@ -21,7 +21,7 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24 w-full">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <div className="w-full">
-            <div className="mb-6 sm:mb-8">
+            <div className="mb-4 sm:mb-6">
               <div
                 className="inline-block border-l-4 pl-3 sm:pl-4 mb-3 sm:mb-4"
                 style={{
@@ -37,42 +37,7 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
               </h1>
             </div>
 
-            <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-10 font-medium leading-relaxed text-gray-700">
-              Elbawacht ist Ihr verlässlicher Partner für Objektschutz, Eventschutz und Sicherheitsservice aller Art – mit geschultem Personal, klaren Abläufen und schneller Reaktion, wenn es darauf ankommt.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-10">
-              <button
-                onClick={onOpenForm}
-                className="group relative border border-white/20 text-white px-6 py-4 sm:px-10 sm:py-5 text-sm sm:text-base font-bold rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden active:scale-95 w-full sm:w-auto"
-                style={{
-                  background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
-                }}
-              >
-                <span className="relative z-10">Jetzt unverbindlich anfragen</span>
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)',
-                  }}
-                ></div>
-              </button>
-              <a
-                href="tel:+4940253302940"
-                className="border-2 backdrop-blur-sm px-6 py-4 sm:px-10 sm:py-5 text-sm sm:text-base font-bold rounded-full transition-all flex items-center justify-center space-x-2 sm:space-x-3 group border-gray-300 bg-white/50 text-gray-900 hover:bg-gray-100 hover:shadow-lg relative overflow-hidden w-full sm:w-auto"
-              >
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(13,21,45,0.05) 0%, rgba(33,53,113,0.05) 100%)',
-                  }}
-                />
-                <Phone className="h-4 w-4 sm:h-5 sm:w-5 group-hover:animate-pulse relative z-10" />
-                <span className="relative z-10">040 / 25330294</span>
-              </a>
-            </div>
-
-            <div className="lg:hidden relative mb-6 sm:mb-10 w-full">
+            <div className="lg:hidden relative mb-6 sm:mb-8 w-full">
               <div
                 className="relative border-2 sm:border-4 border-white/20 overflow-hidden rounded-lg shadow-2xl group/image cursor-pointer"
                 style={{
@@ -120,6 +85,41 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
                   </div>
                 </div>
               </div>
+            </div>
+
+            <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-10 font-medium leading-relaxed text-gray-700">
+              Elbawacht ist Ihr verlässlicher Partner für Objektschutz, Eventschutz und Sicherheitsservice aller Art – mit geschultem Personal, klaren Abläufen und schneller Reaktion, wenn es darauf ankommt.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-10">
+              <button
+                onClick={onOpenForm}
+                className="group relative border border-white/20 text-white px-6 py-4 sm:px-10 sm:py-5 text-sm sm:text-base font-bold rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden active:scale-95 w-full sm:w-auto"
+                style={{
+                  background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                }}
+              >
+                <span className="relative z-10">Jetzt unverbindlich anfragen</span>
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)',
+                  }}
+                ></div>
+              </button>
+              <a
+                href="tel:+4940253302940"
+                className="border-2 backdrop-blur-sm px-6 py-4 sm:px-10 sm:py-5 text-sm sm:text-base font-bold rounded-full transition-all flex items-center justify-center space-x-2 sm:space-x-3 group border-gray-300 bg-white/50 text-gray-900 hover:bg-gray-100 hover:shadow-lg relative overflow-hidden w-full sm:w-auto"
+              >
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(13,21,45,0.05) 0%, rgba(33,53,113,0.05) 100%)',
+                  }}
+                />
+                <Phone className="h-4 w-4 sm:h-5 sm:w-5 group-hover:animate-pulse relative z-10" />
+                <span className="relative z-10">040 / 25330294</span>
+              </a>
             </div>
           </div>
 
