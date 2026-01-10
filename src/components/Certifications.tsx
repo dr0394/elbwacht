@@ -72,7 +72,7 @@ export default function Certifications() {
         <div className="relative mb-16">
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -translate-x-4 bg-white hover:bg-royal-700 text-royal-700 hover:text-white border-2 border-royal-700 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -translate-x-4 bg-white hover:bg-royal-700 text-royal-700 hover:text-white border-2 border-royal-700 rounded-full p-3 transition-all duration-300 hover:scale-110"
             aria-label="Scroll left"
           >
             <ChevronLeft className="h-6 w-6" strokeWidth={3} />
@@ -80,7 +80,7 @@ export default function Certifications() {
 
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 translate-x-4 bg-white hover:bg-royal-700 text-royal-700 hover:text-white border-2 border-royal-700 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 translate-x-4 bg-white hover:bg-royal-700 text-royal-700 hover:text-white border-2 border-royal-700 rounded-full p-3 transition-all duration-300 hover:scale-110"
             aria-label="Scroll right"
           >
             <ChevronRight className="h-6 w-6" strokeWidth={3} />
@@ -96,17 +96,16 @@ export default function Certifications() {
           >
             {certifications.map((cert, index) => (
               <div key={index} className="group relative flex-shrink-0 w-[500px]">
-                <div className="absolute -inset-1 bg-royal-700/10 blur-2xl group-hover:bg-royal-700/20 transition-all rounded-lg"></div>
-                <div className="relative h-full bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-royal-700/50 rounded-lg p-8 transition-all">
+                <div className="relative h-full bg-white border-2 border-gray-200 group-hover:border-royal-700 rounded-xl p-8 transition-all duration-300 group-hover:transform group-hover:-translate-y-1">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
-                      <div className="p-4 bg-royal-700/20 border-2 border-royal-700 rounded-lg group-hover:scale-110 transition-transform">
-                        <cert.icon className="h-10 w-10 text-royal-700" strokeWidth={2.5} />
+                      <div className="p-4 bg-royal-50 border-2 border-royal-700 rounded-xl group-hover:bg-royal-700 transition-all duration-300">
+                        <cert.icon className="h-10 w-10 text-royal-700 group-hover:text-white transition-colors duration-300" strokeWidth={2.5} />
                       </div>
                     </div>
 
                     <div className="flex-1">
-                      <h3 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">
+                      <h3 className="text-2xl font-black text-gray-900 mb-4 tracking-tight group-hover:text-royal-700 transition-colors duration-300">
                         {cert.title}
                       </h3>
 
@@ -114,11 +113,11 @@ export default function Certifications() {
                         {cert.description}
                       </p>
 
-                      <div className="space-y-3 pt-6 border-t border-gray-200">
+                      <div className="space-y-3 pt-6 border-t-2 border-gray-200 group-hover:border-royal-700 transition-colors duration-300">
                         {cert.features.map((feature, idx) => (
                           <div key={idx} className="flex items-center space-x-3">
-                            <div className="w-1.5 h-1.5 bg-royal-700 rounded-full"></div>
-                            <span className="text-gray-600 text-sm font-medium">{feature}</span>
+                            <div className="w-2 h-2 bg-royal-700 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
+                            <span className="text-gray-600 text-sm font-medium group-hover:text-gray-900 transition-colors duration-300">{feature}</span>
                           </div>
                         ))}
                       </div>
