@@ -87,23 +87,6 @@ export default function FAQ() {
             </div>
           ))}
         </div>
-
-        <div className="mt-16 text-center">
-          <div className="inline-block bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 rounded-lg p-8">
-            <p className="text-gray-900 text-xl font-bold mb-3">
-              Haben Sie weitere Fragen?
-            </p>
-            <p className="text-gray-700 font-medium mb-6">
-              Kontaktieren Sie uns gerne - wir beraten Sie persönlich
-            </p>
-            <a
-              href="tel: +494025330294"
-              className="inline-block bg-royal-700 hover:bg-royal-800 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105"
-            >
-               +49 40 25330294
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
