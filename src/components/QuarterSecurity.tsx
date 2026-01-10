@@ -25,6 +25,7 @@ export default function QuarterSecurity() {
   ];
 
   return (
+    <>
     <section className="relative py-24 overflow-hidden">
       <div
         className="absolute inset-0"
@@ -123,7 +124,7 @@ export default function QuarterSecurity() {
         </div>
 
         <div
-          className="relative backdrop-blur-sm border-2 p-8 rounded-lg text-center mb-12"
+          className="relative backdrop-blur-sm border-2 p-8 rounded-lg text-center"
           style={{
             background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%)',
             borderColor: 'rgba(255,255,255,0.2)',
@@ -139,22 +140,29 @@ export default function QuarterSecurity() {
             Wir sind da, bevor etwas passiert. Professionelle Überwachung verhindert Besetzungen, Vandalismus und unbefugte Zutritte durch kontinuierliche Präsenz und dokumentierte Kontrollen.
           </p>
         </div>
+      </div>
+    </section>
 
-        <div className="text-center mb-8">
-          <h3 className="text-2xl lg:text-4xl font-black text-white mb-3 leading-tight">
+    <section className="relative py-24 bg-gradient-to-b from-gray-50 via-white to-gray-100">
+      <div className="absolute inset-0 opacity-[0.02]" style={{
+        backgroundImage: `
+          repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px),
+          repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px)
+        `,
+        backgroundSize: '40px 40px',
+      }}></div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4 leading-tight">
             Quartiersicherung & Objektüberwachung in Göttingen
           </h3>
-          <h4 className="text-lg lg:text-2xl font-bold text-white/95 leading-tight">
+          <h4 className="text-xl lg:text-2xl font-bold text-gray-700 leading-tight">
             Referenz: Kontrolle über eine deutschlandweit bekannte Problemimmobilie
           </h4>
         </div>
 
-        <div
-          className="relative border-2 rounded-lg overflow-hidden min-h-[600px] flex items-center"
-          style={{
-            borderColor: 'rgba(255,255,255,0.2)',
-          }}
-        >
+        <div className="relative border-2 border-gray-200 rounded-lg overflow-hidden min-h-[600px] flex items-center shadow-xl">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
@@ -197,5 +205,6 @@ export default function QuarterSecurity() {
         </div>
       </div>
     </section>
+    </>
   );
 }
