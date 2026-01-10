@@ -5,7 +5,6 @@ import ProblemSolution from '../components/ProblemSolution';
 import TrustBadge from '../components/TrustBadge';
 import Services from '../components/Services';
 import QuarterSecurity from '../components/QuarterSecurity';
-import WhyUs from '../components/WhyUs';
 import AboutUs from '../components/AboutUs';
 import Certifications from '../components/Certifications';
 import Testimonials from '../components/Testimonials';
@@ -28,7 +27,6 @@ export default function Home() {
       <TrustBadge />
       <Services />
       <QuarterSecurity />
-      <WhyUs />
       <AboutUs />
       <Certifications />
       <Testimonials />
