@@ -93,32 +93,6 @@ export default function ProblemSolution() {
             </div>
           </div>
         </div>
-
-        <div className="relative group">
-          <div className="absolute -inset-2 bg-gradient-to-r from-royal-700/20 via-royal-700/30 to-royal-700/20 blur-2xl rounded-lg"></div>
-          <div className="relative bg-gradient-to-r from-royal-700 to-royal-800 text-white p-10 border-2 border-royal-700 rounded-lg shadow-2xl">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="flex-1">
-                <p className="text-2xl lg:text-3xl font-black mb-3 uppercase tracking-tight">
-                  Maximaler Schutz durch Experten
-                </p>
-                <p className="text-gray-100 text-lg font-medium">
-                  500+ zufriedene Kunden vertrauen auf unsere Expertise in Hamburg und Norddeutschland
-                </p>
-              </div>
-              <div className="flex items-center gap-6">
-                <div className="text-center px-8 py-5 bg-gray-50/20 backdrop-blur-sm border-2 border-white rounded-lg">
-                  <div className="text-5xl font-black mb-1">500+</div>
-                  <div className="text-sm font-bold tracking-wider uppercase text-gray-200">Kunden</div>
-                </div>
-                <div className="text-center px-8 py-5 bg-gray-50/20 backdrop-blur-sm border-2 border-white rounded-lg">
-                  <div className="text-5xl font-black mb-1">24/7</div>
-                  <div className="text-sm font-bold tracking-wider uppercase text-gray-200">Service</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
