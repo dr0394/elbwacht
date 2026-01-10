@@ -1,4 +1,4 @@
-import { Award, Shield, FileCheck, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Award, Shield, FileCheck, CheckCircle, ChevronLeft, ChevronRight, GraduationCap } from 'lucide-react';
 import { useRef } from 'react';
 
 const certifications = [
@@ -25,6 +25,12 @@ const certifications = [
     title: 'Zuverlässigkeitsprüfung',
     description: 'Behördliche Überprüfung aller Mitarbeiter nach §34a GewO und polizeilichem Führungszeugnis.',
     features: ['Polizeiliche Prüfung', 'Führungszeugnis', 'Regelmäßige Updates']
+  },
+  {
+    icon: GraduationCap,
+    title: 'Regelmäßige Weiterbildung',
+    description: 'Kontinuierliche Schulungen in Deeskalation, Brandschutz, Erster Hilfe und aktueller Rechtsprechung.',
+    features: ['100% Zertifiziert', 'Jährliche Schulungen', 'Aktuelle Standards']
   }
 ];
 
@@ -121,28 +127,6 @@ export default function Certifications() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        <div className="relative group">
-          <div className="absolute -inset-2 bg-gradient-to-r from-royal-700/20 via-royal-700/30 to-royal-700/20 blur-2xl rounded-lg"></div>
-          <div className="relative bg-gradient-to-r from-royal-700 to-royal-800 text-white p-10 border-2 border-royal-700 rounded-lg shadow-2xl">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="flex-1">
-                <p className="text-2xl lg:text-3xl font-black mb-3 uppercase tracking-tight">
-                  Regelmäßige Weiterbildung
-                </p>
-                <p className="text-gray-100 text-lg font-medium">
-                  Kontinuierliche Schulungen in Deeskalation, Brandschutz, Erster Hilfe und aktueller Rechtsprechung
-                </p>
-              </div>
-              <div className="flex items-center gap-6">
-                <div className="text-center px-8 py-5 bg-gray-50/20 backdrop-blur-sm border-2 border-white rounded-lg">
-                  <div className="text-5xl font-black mb-1">100%</div>
-                  <div className="text-sm font-bold tracking-wider uppercase text-gray-200">Zertifiziert</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
