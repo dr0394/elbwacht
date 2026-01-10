@@ -153,19 +153,28 @@ export default function QuarterSecurity() {
       }}></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6 leading-tight">
-            Referenzprojekt Göttingen
+        <div className="text-center mb-16">
+          <div className="inline-block mb-6 px-6 py-2 border-2 border-royal-700 bg-royal-50 backdrop-blur-sm rounded-full">
+            <span className="text-royal-700 font-black text-sm tracking-widest uppercase">Referenzprojekt</span>
+          </div>
+
+          <h3 className="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight tracking-tight">
+            Göttingen
           </h3>
-          <p className="text-lg lg:text-xl text-gray-700 max-w-4xl mx-auto mb-4 leading-relaxed font-semibold">
-            Stabilisierung einer öffentlich bekannten Problemimmobilie durch strukturierte Präsenz und klare Sicherheitsabläufe.
-          </p>
-          <p className="text-base lg:text-lg text-gray-600 max-w-4xl mx-auto mb-4 leading-relaxed">
-            Bei einem öffentlich bekannten Objekt mit erhöhtem Risiko wurde durch konsequente Präsenz, strukturierte Abläufe und kontinuierliche Kontrolle eine stabile und sichere Situation hergestellt.
-          </p>
-          <p className="text-base lg:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Der Fokus lag auf Prävention, klarer Organisation und schneller Reaktion – dauerhaft und ohne Eskalation.
-          </p>
+
+          <div className="max-w-4xl mx-auto space-y-6">
+            <p className="text-xl lg:text-2xl text-gray-900 font-bold leading-relaxed">
+              Stabilisierung einer öffentlich bekannten Problemimmobilie durch strukturierte Präsenz und klare Sicherheitsabläufe.
+            </p>
+
+            <p className="text-lg lg:text-xl text-gray-700 leading-relaxed font-medium">
+              Bei einem öffentlich bekannten Objekt mit erhöhtem Risiko wurde durch konsequente Präsenz, strukturierte Abläufe und kontinuierliche Kontrolle eine stabile und sichere Situation hergestellt.
+            </p>
+
+            <p className="text-lg lg:text-xl text-gray-600 leading-relaxed font-medium">
+              Der Fokus lag auf Prävention, klarer Organisation und schneller Reaktion – dauerhaft und ohne Eskalation.
+            </p>
+          </div>
         </div>
 
         <div className="relative border-2 border-gray-200 rounded-lg overflow-hidden shadow-xl bg-gray-900">
