@@ -4,6 +4,7 @@ import HeroSection from '../components/HeroSection';
 import ProblemSolution from '../components/ProblemSolution';
 import TrustBadge from '../components/TrustBadge';
 import Services from '../components/Services';
+import QuarterSecurity from '../components/QuarterSecurity';
 import WhyUs from '../components/WhyUs';
 import AboutUs from '../components/AboutUs';
 import Certifications from '../components/Certifications';
@@ -26,6 +27,7 @@ export default function Home() {
       <ProblemSolution />
       <TrustBadge />
       <Services />
+      <QuarterSecurity />
       <WhyUs />
       <AboutUs />
       <Certifications />
