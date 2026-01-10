@@ -33,7 +33,7 @@ export default function AboutUs({ onOpenForm }: AboutUsProps) {
                 <img
                   src="https://i.imgur.com/vtR48i2.jpeg"
                   alt="Elbwacht Security Team"
-                  className="w-full h-[250px] sm:h-[300px] object-cover grayscale contrast-110"
+                  className="w-full h-[450px] sm:h-[540px] object-cover grayscale contrast-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                 <div className="absolute inset-0 bg-royal-700/5"></div>
