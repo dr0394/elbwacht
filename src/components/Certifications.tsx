@@ -96,7 +96,7 @@ export default function Certifications() {
           >
             {certifications.map((cert, index) => (
               <div key={index} className="group relative flex-shrink-0 w-[500px]">
-                <div className="relative h-full bg-white border-2 border-gray-200 group-hover:border-royal-700 rounded-xl p-8 transition-all duration-300 group-hover:transform group-hover:-translate-y-1">
+                <div className="relative h-full bg-white border-2 border-gray-200 group-hover:border-royal-700 rounded-xl p-8 transition-all duration-300">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
                       <div className="p-4 bg-royal-50 border-2 border-royal-700 rounded-xl group-hover:bg-royal-700 transition-all duration-300">
