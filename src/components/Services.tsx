@@ -1,5 +1,9 @@
 import { Shield, Users, Building2, Eye, Clock, HardHat } from 'lucide-react';
 
+interface ServicesProps {
+  onOpenForm: () => void;
+}
+
 const services = [
   {
     icon: Building2,
@@ -39,7 +43,7 @@ const services = [
   }
 ];
 
-export default function Services() {
+export default function Services({ onOpenForm }: ServicesProps) {
   return (
     <section id="leistungen" className="relative py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-gray-50 via-white to-gray-100 overflow-hidden w-full">
       <div className="absolute inset-0 opacity-[0.03]" style={{
@@ -122,7 +126,8 @@ export default function Services() {
         </div>
 
         <div className="mt-8 sm:mt-12 lg:mt-16 text-center px-4">
-          <div
+          <button
+            onClick={onOpenForm}
             className="inline-flex items-center gap-3 sm:gap-4 backdrop-blur-sm px-6 py-4 sm:px-8 sm:py-6 rounded-full border border-white/20 relative overflow-hidden group cursor-pointer transition-all hover:scale-105 w-full max-w-md sm:w-auto"
             style={{
               background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
@@ -139,7 +144,7 @@ export default function Services() {
               <div className="font-black text-base sm:text-lg text-white">Individuelle Lösungen</div>
               <div className="text-xs sm:text-sm font-medium text-gray-300">Wir beraten Sie gerne persönlich</div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </section>

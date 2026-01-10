@@ -24,7 +24,7 @@ export default function Home() {
       <HeroSection onOpenForm={() => setShowForm(true)} />
       <ProblemSolution />
       <TrustBadge />
-      <Services />
+      <Services onOpenForm={() => setShowForm(true)} />
       <QuarterSecurity />
       <AboutUs onOpenForm={() => setShowForm(true)} />
       <Certifications />

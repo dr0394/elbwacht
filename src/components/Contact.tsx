@@ -114,7 +114,7 @@ export default function Contact({ onOpenForm }: ContactProps) {
                     <Phone className="h-6 w-6 sm:h-7 sm:w-7 text-white relative z-10" strokeWidth={2.5} />
                   </div>
                   <h3 className="text-base sm:text-lg font-black text-gray-900 mb-2 sm:mb-3 tracking-tight">Telefon</h3>
-                  <a href="tel:+4940123456789" className="text-gray-600 hover:bg-gradient-to-r hover:from-royal-700 hover:to-royal-500 hover:bg-clip-text hover:text-transparent transition-all text-sm sm:text-base font-medium break-all">
+                  <a href="tel:+4940253302940" className="text-gray-600 hover:bg-gradient-to-r hover:from-royal-700 hover:to-royal-500 hover:bg-clip-text hover:text-transparent transition-all text-sm sm:text-base font-medium break-all">
                     +49 40 25330294
                   </a>
                   <p className="text-gray-700 mt-1 sm:mt-2 font-medium text-xs sm:text-sm">24/7 Notrufhotline</p>
