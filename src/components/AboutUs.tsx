@@ -105,7 +105,7 @@ export default function AboutUs({ onOpenForm }: AboutUsProps) {
           ))}
         </div>
 
-        <div className="lg:hidden mt-8 sm:mt-10 text-center">
+        <div className="mt-8 sm:mt-10 text-center">
           <button
             onClick={onOpenForm}
             className="group relative border border-white/20 text-white px-6 py-4 text-sm sm:text-base font-bold rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden active:scale-95 w-full sm:w-auto"
