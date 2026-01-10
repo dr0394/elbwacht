@@ -1,11 +1,49 @@
-import { Shield, Clock, Users } from 'lucide-react';
+import { Shield, Clock, Users, Award, HeadphonesIcon, Scale } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function TrustBadge() {
-  const stats = [
-    { icon: Users, value: '500+', label: 'Kunden', description: 'Vertrauen uns' },
-    { icon: Clock, value: '24/7', label: 'Service', description: 'Rund um die Uhr' },
-    { icon: Shield, value: '15+', label: 'Jahre', description: 'Erfahrung' },
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const features = [
+    {
+      icon: Award,
+      title: 'Geprüfte Qualifikation',
+      description: 'Alle unsere Mitarbeiter verfügen über die erforderliche §34a GewO Sachkundeprüfung und regelmäßige Weiterbildungen.',
+    },
+    {
+      icon: Clock,
+      title: '24/7 Verfügbarkeit',
+      description: 'Rund um die Uhr erreichbar und einsatzbereit - 365 Tage im Jahr für Ihre Sicherheit.',
+    },
+    {
+      icon: Users,
+      title: 'Erfahrenes Team',
+      description: 'Über 15 Jahre Erfahrung im Sicherheitsgewerbe mit hochqualifizierten Sicherheitskräften.',
+    },
+    {
+      icon: Shield,
+      title: 'Zertifizierte Qualität',
+      description: 'IHK-zertifiziert und nach DIN 77200 für Sicherheitsdienstleistungen qualifiziert.',
+    },
+    {
+      icon: HeadphonesIcon,
+      title: 'Persönlicher Service',
+      description: 'Direkter Ansprechpartner und individuelle Betreuung für optimale Sicherheitslösungen.',
+    },
+    {
+      icon: Scale,
+      title: 'Rechtssicherheit',
+      description: 'Vollständig versichert, rechtskonforme Dokumentation und professionelle Behördenkoordination.',
+    },
   ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % features.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [features.length]);
 
   return (
     <section className="relative py-20 lg:py-28 overflow-hidden">
@@ -41,46 +79,68 @@ export default function TrustBadge() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
+        <div className="relative h-80 lg:h-64">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            const isActive = index === currentSlide;
+            const isPrev = index === (currentSlide - 1 + features.length) % features.length;
+            const isNext = index === (currentSlide + 1) % features.length;
+
             return (
               <div
                 key={index}
-                className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-white/10"
-                style={{
-                  boxShadow: '0 4px 30px rgba(0, 0, 0, 0.3)',
-                }}
+                className={`absolute inset-0 transition-all duration-700 ${
+                  isActive
+                    ? 'opacity-100 translate-x-0 scale-100 z-20'
+                    : isPrev
+                    ? 'opacity-0 -translate-x-full scale-95 z-10'
+                    : isNext
+                    ? 'opacity-0 translate-x-full scale-95 z-10'
+                    : 'opacity-0 translate-x-full scale-90 z-0'
+                }`}
               >
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div
-                    className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full blur-2xl"
-                    style={{
-                      background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
-                    }}
-                  />
-                </div>
+                <div className="h-full flex items-center justify-center">
+                  <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-white/10 max-w-3xl mx-auto hover:bg-white/10 hover:border-white/20 transition-all duration-500">
+                    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div
+                        className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full blur-2xl"
+                        style={{
+                          background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
+                        }}
+                      />
+                    </div>
 
-                <div className="relative flex flex-col items-center text-center">
-                  <div className="mb-6 p-4 rounded-full bg-white/10 backdrop-blur-sm group-hover:bg-white/15 transition-all duration-300">
-                    <Icon className="h-8 w-8 text-white" strokeWidth={1.5} />
-                  </div>
+                    <div className="relative flex flex-col items-center text-center">
+                      <div className="mb-6 p-5 rounded-full bg-white/10 backdrop-blur-sm group-hover:bg-white/15 transition-all duration-300">
+                        <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
+                      </div>
 
-                  <div className="text-5xl lg:text-6xl font-black mb-2 text-white tracking-tight">
-                    {stat.value}
-                  </div>
+                      <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-white tracking-tight">
+                        {feature.title}
+                      </h3>
 
-                  <div className="text-xl font-bold text-gray-200 mb-1">
-                    {stat.label}
-                  </div>
-
-                  <div className="text-sm text-gray-400">
-                    {stat.description}
+                      <p className="text-base lg:text-lg text-gray-300 leading-relaxed max-w-2xl">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             );
           })}
+        </div>
+
+        <div className="flex justify-center gap-2 mt-8">
+          {features.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentSlide ? 'w-8 bg-white' : 'w-2 bg-white/30 hover:bg-white/50'
+              }`}
+              aria-label={`Gehe zu Slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>
