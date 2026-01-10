@@ -123,41 +123,40 @@ export default function QuarterSecurity() {
         </div>
 
         <div
-          className="relative backdrop-blur-sm border-2 rounded-lg overflow-hidden mb-12"
+          className="relative border-2 rounded-lg overflow-hidden mb-12 min-h-[600px] flex items-center"
           style={{
-            background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%)',
             borderColor: 'rgba(255,255,255,0.2)',
           }}
         >
-          <div className="grid md:grid-cols-2 gap-0">
-            <div className="relative h-64 md:h-auto">
-              <img
-                src="https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Objektschutz Referenzprojekt Göttingen"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div
-                className="absolute inset-0"
-                style={{
-                  background: 'linear-gradient(to right, transparent 0%, rgba(13,21,45,0.3) 100%)',
-                }}
-              ></div>
-            </div>
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(https://i.imgur.com/bn62Iiv.jpg)',
+            }}
+          ></div>
 
-            <div className="p-8 lg:p-12">
-              <h1 className="text-3xl lg:text-4xl font-black text-white mb-6 leading-tight">
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(135deg, rgba(13,21,45,0.85) 0%, rgba(13,21,45,0.75) 50%, rgba(13,21,45,0.85) 100%)',
+            }}
+          ></div>
+
+          <div className="relative z-10 w-full p-8 lg:p-16">
+            <div className="max-w-4xl">
+              <h1 className="text-3xl lg:text-5xl font-black text-white mb-6 leading-tight">
                 Quartiersicherung & Objektüberwachung in Göttingen
               </h1>
 
-              <h2 className="text-xl lg:text-2xl font-bold text-white/90 mb-4 leading-tight">
+              <h2 className="text-xl lg:text-3xl font-bold text-white/95 mb-4 leading-tight">
                 Referenz: Kontrolle über eine deutschlandweit bekannte Problemimmobilie
               </h2>
 
-              <h3 className="text-lg font-bold text-white/80 mb-6 leading-relaxed">
+              <h3 className="text-lg lg:text-xl font-bold text-white/85 mb-8 leading-relaxed">
                 Durch strukturierte Objektüberwachung, Präsenz und klare Abläufe konnte eine unkontrollierte Besetzung verhindert werden.
               </h3>
 
-              <div className="space-y-4 text-white/90 font-medium leading-relaxed">
+              <div className="space-y-4 text-white/90 text-base lg:text-lg font-medium leading-relaxed">
                 <p>
                   Diese Referenz zeigt, wie professionelle Quartiersicherung bei besonders sensiblen Objekten funktioniert.
                 </p>
