@@ -47,7 +47,7 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
                 <img
                   src="https://i.imgur.com/AROdPLs.jpg"
                   alt="Professioneller Sicherheitsdienst"
-                  className="w-full h-[250px] sm:h-[300px] object-cover object-[center_20%] contrast-110 group-hover/image:scale-105 transition-all duration-700 ease-out"
+                  className="w-full h-[450px] sm:h-[540px] object-cover object-[center_20%] contrast-110 group-hover/image:scale-105 transition-all duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                 <div
