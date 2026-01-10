@@ -1,4 +1,5 @@
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const testimonials = [
   {
@@ -40,6 +41,49 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerView(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerView(2);
+      } else {
+        setItemsPerView(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const getVisibleTestimonials = () => {
+    const visible = [];
+    for (let i = 0; i < itemsPerView; i++) {
+      visible.push(testimonials[(currentIndex + i) % testimonials.length]);
+    }
+    return visible;
+  };
+
   return (
     <section className="relative py-24 bg-gradient-to-b from-gray-50 via-white to-gray-100">
       <div className="absolute inset-0 opacity-[0.02]" style={{
@@ -63,35 +107,70 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="group relative">
-              <div className="absolute -inset-1 bg-royal-700/10 blur-2xl group-hover:bg-royal-700/20 transition-all rounded-lg"></div>
-              <div className="relative h-full bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-royal-700/50 rounded-lg p-8 transition-all">
-                <div className="flex justify-between items-start mb-6">
-                  <Quote className="h-10 w-10 text-royal-700/40" strokeWidth={2} />
-                  <div className="flex gap-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
+        <div className="relative">
+          <div className="overflow-hidden">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {getVisibleTestimonials().map((testimonial, index) => (
+                <div key={index} className="group relative animate-fadeIn">
+                  <div className="absolute -inset-1 bg-royal-700/10 blur-2xl group-hover:bg-royal-700/20 transition-all rounded-lg"></div>
+                  <div className="relative h-full bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-royal-700/50 rounded-lg p-8 transition-all">
+                    <div className="flex justify-between items-start mb-6">
+                      <Quote className="h-10 w-10 text-royal-700/40" strokeWidth={2} />
+                      <div className="flex gap-1">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                    </div>
+
+                    <p className="text-gray-600 mb-8 leading-relaxed font-medium">
+                      "{testimonial.text}"
+                    </p>
+
+                    <div className="pt-6 border-t border-gray-200">
+                      <p className="text-gray-900 font-black text-lg tracking-tight">
+                        {testimonial.name}
+                      </p>
+                      <p className="text-gray-700 text-sm font-medium mt-1">
+                        {testimonial.company}
+                      </p>
+                    </div>
                   </div>
                 </div>
-
-                <p className="text-gray-600 mb-8 leading-relaxed font-medium">
-                  "{testimonial.text}"
-                </p>
-
-                <div className="pt-6 border-t border-gray-200">
-                  <p className="text-gray-900 font-black text-lg tracking-tight">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-gray-700 text-sm font-medium mt-1">
-                    {testimonial.company}
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <button
+            onClick={handlePrevious}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 bg-white hover:bg-royal-700 text-royal-700 hover:text-white border-2 border-royal-700 rounded-full p-3 transition-all shadow-lg hover:shadow-xl z-10"
+            aria-label="Vorherige Bewertung"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <button
+            onClick={handleNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 bg-white hover:bg-royal-700 text-royal-700 hover:text-white border-2 border-royal-700 rounded-full p-3 transition-all shadow-lg hover:shadow-xl z-10"
+            aria-label="Nächste Bewertung"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`h-2 rounded-full transition-all ${
+                  index === currentIndex
+                    ? 'w-8 bg-royal-700'
+                    : 'w-2 bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Gehe zu Bewertung ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="mt-16 text-center">
