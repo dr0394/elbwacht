@@ -29,8 +29,67 @@ export default function Contact({ onOpenForm }: ContactProps) {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div className="space-y-8">
+        <div className="max-w-4xl mx-auto space-y-12">
+          <div className="relative group">
+            <div
+              className="absolute -inset-2 blur-2xl rounded-lg"
+              style={{
+                background: 'radial-gradient(circle, rgba(13,21,45,0.2) 0%, rgba(33,53,113,0.15) 50%, transparent 70%)',
+              }}
+            ></div>
+            <div
+              className="relative backdrop-blur-sm border-2 border-white/20 rounded-lg p-10 overflow-hidden"
+              style={{
+                background: 'linear-gradient(135deg, rgba(13,21,45,0.05) 0%, rgba(33,53,113,0.05) 100%)',
+              }}
+            >
+              <h3 className="text-3xl font-black mb-6 tracking-tight bg-gradient-to-r from-royal-700 to-royal-500 bg-clip-text text-transparent">
+                Jetzt Anfrage senden
+              </h3>
+              <p className="text-gray-600 text-lg mb-8 leading-relaxed font-medium">
+                Nutzen Sie unser Kontaktformular für eine schnelle und unkomplizierte Anfrage.
+                Wir melden uns innerhalb von 24 Stunden bei Ihnen zurück und erstellen ein
+                individuelles Angebot für Ihre Sicherheitsbedürfnisse.
+              </p>
+
+              <div className="space-y-4 mb-8">
+                {[
+                  'Kostenlose Erstberatung',
+                  'Individuelle Sicherheitskonzepte',
+                  'Transparente Preisgestaltung',
+                  'Schnelle Reaktionszeit'
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <div
+                      className="w-2 h-2 rounded-full"
+                      style={{
+                        background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                      }}
+                    ></div>
+                    <span className="text-gray-600 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                onClick={onOpenForm}
+                className="w-full relative overflow-hidden border border-white/20 text-white px-10 py-5 text-lg font-bold rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-2xl"
+                style={{
+                  background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+                }}
+              >
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
+                  }}
+                />
+                <span className="relative z-10">Kontaktformular öffnen</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
             <div className="relative group">
               <div
                 className="absolute -inset-1 blur-2xl group-hover:opacity-100 opacity-50 transition-all rounded-lg"
@@ -176,65 +235,6 @@ export default function Contact({ onOpenForm }: ContactProps) {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="relative group">
-            <div
-              className="absolute -inset-2 blur-2xl rounded-lg"
-              style={{
-                background: 'radial-gradient(circle, rgba(13,21,45,0.2) 0%, rgba(33,53,113,0.15) 50%, transparent 70%)',
-              }}
-            ></div>
-            <div
-              className="relative backdrop-blur-sm border-2 border-white/20 rounded-lg p-10 h-full flex flex-col justify-center overflow-hidden"
-              style={{
-                background: 'linear-gradient(135deg, rgba(13,21,45,0.05) 0%, rgba(33,53,113,0.05) 100%)',
-              }}
-            >
-              <h3 className="text-3xl font-black mb-6 tracking-tight bg-gradient-to-r from-royal-700 to-royal-500 bg-clip-text text-transparent">
-                Jetzt Anfrage senden
-              </h3>
-              <p className="text-gray-600 text-lg mb-8 leading-relaxed font-medium">
-                Nutzen Sie unser Kontaktformular für eine schnelle und unkomplizierte Anfrage.
-                Wir melden uns innerhalb von 24 Stunden bei Ihnen zurück und erstellen ein
-                individuelles Angebot für Ihre Sicherheitsbedürfnisse.
-              </p>
-
-              <div className="space-y-4 mb-8">
-                {[
-                  'Kostenlose Erstberatung',
-                  'Individuelle Sicherheitskonzepte',
-                  'Transparente Preisgestaltung',
-                  'Schnelle Reaktionszeit'
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div
-                      className="w-2 h-2 rounded-full"
-                      style={{
-                        background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
-                      }}
-                    ></div>
-                    <span className="text-gray-600 font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                onClick={onOpenForm}
-                className="w-full relative overflow-hidden border border-white/20 text-white px-10 py-5 text-lg font-bold rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-2xl"
-                style={{
-                  background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
-                }}
-              >
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
-                  }}
-                />
-                <span className="relative z-10">Kontaktformular öffnen</span>
-              </button>
             </div>
           </div>
         </div>
