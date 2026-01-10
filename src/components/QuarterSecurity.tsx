@@ -154,51 +154,35 @@ export default function QuarterSecurity() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4 leading-tight">
-            Quartiersicherung & Objektüberwachung in Göttingen
+          <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6 leading-tight">
+            Referenzprojekt Göttingen
           </h3>
-          <h4 className="text-xl lg:text-2xl font-bold text-gray-700 leading-tight">
-            Referenz: Kontrolle über eine deutschlandweit bekannte Problemimmobilie
-          </h4>
+          <p className="text-lg lg:text-xl text-gray-700 max-w-4xl mx-auto mb-4 leading-relaxed font-semibold">
+            Stabilisierung einer öffentlich bekannten Problemimmobilie durch strukturierte Präsenz und klare Sicherheitsabläufe.
+          </p>
+          <p className="text-base lg:text-lg text-gray-600 max-w-4xl mx-auto mb-4 leading-relaxed">
+            Bei einem öffentlich bekannten Objekt mit erhöhtem Risiko wurde durch konsequente Präsenz, strukturierte Abläufe und kontinuierliche Kontrolle eine stabile und sichere Situation hergestellt.
+          </p>
+          <p className="text-base lg:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Der Fokus lag auf Prävention, klarer Organisation und schneller Reaktion – dauerhaft und ohne Eskalation.
+          </p>
         </div>
 
-        <div className="relative border-2 border-gray-200 rounded-lg overflow-hidden min-h-[600px] flex items-center shadow-xl">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: 'url(https://i.imgur.com/bn62Iiv.jpg)',
-            }}
-          ></div>
-
-          <div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(135deg, rgba(13,21,45,0.85) 0%, rgba(13,21,45,0.75) 50%, rgba(13,21,45,0.85) 100%)',
-            }}
-          ></div>
-
-          <div className="relative z-10 w-full p-8 lg:p-16">
-            <div className="max-w-4xl">
-              <h5 className="text-lg lg:text-xl font-bold text-white/85 mb-8 leading-relaxed">
-                Durch strukturierte Objektüberwachung, Präsenz und klare Abläufe konnte eine unkontrollierte Besetzung verhindert werden.
-              </h5>
-
-              <div className="space-y-4 text-white/90 text-base lg:text-lg font-medium leading-relaxed">
-                <p>
-                  Diese Referenz zeigt, wie professionelle Quartiersicherung bei besonders sensiblen Objekten funktioniert.
-                </p>
-                <p>
-                  Bei einer in der Presse vielfach thematisierten Problemimmobilie in Göttingen bestand ein erhöhtes Risiko durch unbefugten Zutritt, Vandalismus und mögliche Besetzung.
-                </p>
-                <p>
-                  Durch gezielte Objektüberwachung, regelmäßige Kontrollgänge und sichtbare Präsenz wurde die Situation stabilisiert und dauerhaft unter Kontrolle gebracht.
-                </p>
-                <p>
-                  Der Fokus lag dabei auf Prävention, Dokumentation und schneller Reaktion – ohne Eskalation.
-                </p>
-                <p>
-                  Diese Maßnahme belegt unsere Erfahrung im Umgang mit leerstehenden Häusern, Problemobjekten und quartalsweiser Quartiersicherung – auch in komplexen Fällen mit öffentlicher Aufmerksamkeit.
-                </p>
+        <div className="relative border-2 border-gray-200 rounded-lg overflow-hidden shadow-xl bg-gray-900">
+          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center">
+                <div className="mb-4">
+                  <svg
+                    className="w-24 h-24 mx-auto text-red-600"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </div>
+                <p className="text-white text-lg font-semibold">YouTube Video Platzhalter</p>
+                <p className="text-gray-400 text-sm mt-2">Video-ID hier einfügen</p>
               </div>
             </div>
           </div>
