@@ -78,50 +78,6 @@ export default function QuarterSecurity() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={index}
-                className="group relative backdrop-blur-sm border-2 p-8 rounded-lg transition-all duration-300 hover:scale-[1.02]"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
-                  borderColor: 'rgba(255,255,255,0.1)',
-                }}
-              >
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%)',
-                  }}
-                ></div>
-
-                <div className="relative flex items-start space-x-4">
-                  <div
-                    className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"
-                    style={{
-                      background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                    }}
-                  >
-                    <Icon className="h-6 w-6 text-white" strokeWidth={2} />
-                  </div>
-
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-white mb-2 leading-tight">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm text-white/80 leading-relaxed font-medium">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
         <div
           className="relative border-2 rounded-lg overflow-hidden mb-12 min-h-[600px] flex items-center"
           style={{
@@ -175,6 +131,50 @@ export default function QuarterSecurity() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <div
+                key={index}
+                className="group relative backdrop-blur-sm border-2 p-8 rounded-lg transition-all duration-300 hover:scale-[1.02]"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
+                  borderColor: 'rgba(255,255,255,0.1)',
+                }}
+              >
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%)',
+                  }}
+                ></div>
+
+                <div className="relative flex items-start space-x-4">
+                  <div
+                    className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                    }}
+                  >
+                    <Icon className="h-6 w-6 text-white" strokeWidth={2} />
+                  </div>
+
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-white mb-2 leading-tight">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-white/80 leading-relaxed font-medium">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <div
