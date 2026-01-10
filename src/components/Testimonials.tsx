@@ -1,5 +1,5 @@
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const testimonials = [
   {
@@ -43,6 +43,8 @@ const testimonials = [
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -74,6 +76,23 @@ export default function Testimonials() {
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current - touchEndX.current > 50) {
+      handleNext();
+    }
+    if (touchStartX.current - touchEndX.current < -50) {
+      handlePrevious();
+    }
   };
 
   const getVisibleTestimonials = () => {
@@ -108,7 +127,12 @@ export default function Testimonials() {
         </div>
 
         <div className="relative">
-          <div className="overflow-hidden">
+          <div
+            className="overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {getVisibleTestimonials().map((testimonial, index) => (
                 <div key={index} className="group relative animate-fadeIn">
@@ -143,7 +167,7 @@ export default function Testimonials() {
 
           <button
             onClick={handlePrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 bg-white hover:bg-royal-700 text-royal-700 hover:text-white border-2 border-royal-700 rounded-full p-3 transition-all shadow-lg hover:shadow-xl z-10"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 bg-white hover:bg-royal-700 text-royal-700 hover:text-white border-2 border-royal-700 rounded-full p-3 transition-all shadow-lg hover:shadow-xl z-10 items-center justify-center"
             aria-label="Vorherige Bewertung"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -151,7 +175,7 @@ export default function Testimonials() {
 
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 bg-white hover:bg-royal-700 text-royal-700 hover:text-white border-2 border-royal-700 rounded-full p-3 transition-all shadow-lg hover:shadow-xl z-10"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 bg-white hover:bg-royal-700 text-royal-700 hover:text-white border-2 border-royal-700 rounded-full p-3 transition-all shadow-lg hover:shadow-xl z-10 items-center justify-center"
             aria-label="Nächste Bewertung"
           >
             <ChevronRight className="w-6 h-6" />
