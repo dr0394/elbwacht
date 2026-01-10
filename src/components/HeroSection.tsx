@@ -82,7 +82,7 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
                 <img
                   src="https://i.imgur.com/AROdPLs.jpg"
                   alt="Professioneller Sicherheitsdienst"
-                  className="w-full h-[300px] object-cover grayscale contrast-110"
+                  className="w-full h-[300px] object-cover object-[center_20%] grayscale contrast-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                 <div
@@ -146,7 +146,7 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
                 <img
                   src="https://i.imgur.com/AROdPLs.jpg"
                   alt="Professioneller Sicherheitsdienst"
-                  className="w-full h-[600px] object-cover grayscale contrast-110"
+                  className="w-full h-[600px] object-cover object-[center_20%] grayscale contrast-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                 <div
