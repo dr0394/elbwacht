@@ -80,7 +80,7 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
                 }}
               >
                 <img
-                  src="https://i.imgur.com/aqDFjQB.jpeg"
+                  src="https://i.imgur.com/AROdPLs.jpg"
                   alt="Professioneller Sicherheitsdienst"
                   className="w-full h-[300px] object-cover grayscale contrast-110"
                 />
@@ -144,7 +144,7 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
                 }}
               >
                 <img
-                  src="https://i.imgur.com/aqDFjQB.jpeg"
+                  src="https://i.imgur.com/AROdPLs.jpg"
                   alt="Professioneller Sicherheitsdienst"
                   className="w-full h-[600px] object-cover grayscale contrast-110"
                 />
