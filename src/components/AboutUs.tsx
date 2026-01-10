@@ -43,25 +43,9 @@ export default function AboutUs({ onOpenForm }: AboutUsProps) {
             <p className="text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed font-medium text-gray-700 break-words">
               Sie möchten Schutz vor Einbruch, Vandalismus oder unkontrolliertem Zutritt – und brauchen einen Partner, auf den sie sich wirklich verlassen können.
             </p>
-            <p className="text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed font-medium text-gray-700 break-words">
+            <p className="text-base sm:text-lg leading-relaxed font-medium text-gray-700 break-words">
               Wir bieten professionelles, geschultes Personal, klare Abläufe und schnelle Reaktionszeiten – damit Sie sich auf Ihr Kerngeschäft konzentrieren können, während wir für Ruhe, Ordnung und Sicherheit sorgen.
             </p>
-
-            <button
-              onClick={onOpenForm}
-              className="lg:hidden group relative border border-white/20 text-white px-6 py-4 text-sm sm:text-base font-bold rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden active:scale-95 w-full sm:w-auto"
-              style={{
-                background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
-              }}
-            >
-              <span className="relative z-10">Jetzt unverbindlich anfragen</span>
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{
-                  background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)',
-                }}
-              ></div>
-            </button>
           </div>
 
           <div className="relative hidden lg:block w-full overflow-hidden">
@@ -119,6 +103,24 @@ export default function AboutUs({ onOpenForm }: AboutUsProps) {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="lg:hidden mt-8 sm:mt-10 text-center">
+          <button
+            onClick={onOpenForm}
+            className="group relative border border-white/20 text-white px-6 py-4 text-sm sm:text-base font-bold rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden active:scale-95 w-full sm:w-auto"
+            style={{
+              background: 'linear-gradient(135deg, #0d152d 0%, #213571 100%)',
+            }}
+          >
+            <span className="relative z-10">Jetzt unverbindlich anfragen</span>
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              style={{
+                background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)',
+              }}
+            ></div>
+          </button>
         </div>
       </div>
     </section>
