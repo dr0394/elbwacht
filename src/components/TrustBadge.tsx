@@ -1,49 +1,34 @@
-import { Shield, Clock, Users, Award, HeadphonesIcon, Scale } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function TrustBadge() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const features = [
+  const images = [
     {
-      icon: Award,
-      title: 'Geprüfte Qualifikation',
-      description: 'Alle unsere Mitarbeiter verfügen über die erforderliche §34a GewO Sachkundeprüfung und regelmäßige Weiterbildungen.',
+      url: 'https://i.imgur.com/McuRdWL.jpg',
+      alt: 'Professionelle Sicherheitskraft im Einsatz',
     },
     {
-      icon: Clock,
-      title: '24/7 Verfügbarkeit',
-      description: 'Rund um die Uhr erreichbar und einsatzbereit - 365 Tage im Jahr für Ihre Sicherheit.',
+      url: 'https://i.imgur.com/BHNNaxC.jpg',
+      alt: 'Sicherheitsteam bei der Arbeit',
     },
     {
-      icon: Users,
-      title: 'Erfahrenes Team',
-      description: 'Über 15 Jahre Erfahrung im Sicherheitsgewerbe mit hochqualifizierten Sicherheitskräften.',
+      url: 'https://i.imgur.com/27g8p3R.jpg',
+      alt: 'Sicherheitsdienst in Hamburg',
     },
     {
-      icon: Shield,
-      title: 'Zertifizierte Qualität',
-      description: 'IHK-zertifiziert und nach DIN 77200 für Sicherheitsdienstleistungen qualifiziert.',
-    },
-    {
-      icon: HeadphonesIcon,
-      title: 'Persönlicher Service',
-      description: 'Direkter Ansprechpartner und individuelle Betreuung für optimale Sicherheitslösungen.',
-    },
-    {
-      icon: Scale,
-      title: 'Rechtssicherheit',
-      description: 'Vollständig versichert, rechtskonforme Dokumentation und professionelle Behördenkoordination.',
+      url: 'https://i.imgur.com/GnsJnNS.jpg',
+      alt: 'Objektschutz durch Experten',
     },
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % features.length);
+      setCurrentSlide((prev) => (prev + 1) % images.length);
     }, 4000);
 
     return () => clearInterval(timer);
-  }, [features.length]);
+  }, [images.length]);
 
   return (
     <section className="relative py-20 lg:py-28 overflow-hidden">
@@ -79,12 +64,11 @@ export default function TrustBadge() {
           </p>
         </div>
 
-        <div className="relative h-80 lg:h-64">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
+        <div className="relative h-[500px] lg:h-[600px]">
+          {images.map((image, index) => {
             const isActive = index === currentSlide;
-            const isPrev = index === (currentSlide - 1 + features.length) % features.length;
-            const isNext = index === (currentSlide + 1) % features.length;
+            const isPrev = index === (currentSlide - 1 + images.length) % images.length;
+            const isNext = index === (currentSlide + 1) % images.length;
 
             return (
               <div
@@ -99,30 +83,14 @@ export default function TrustBadge() {
                     : 'opacity-0 translate-x-full scale-90 z-0'
                 }`}
               >
-                <div className="h-full flex items-center justify-center">
-                  <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-white/10 max-w-3xl mx-auto hover:bg-white/10 hover:border-white/20 transition-all duration-500">
-                    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div
-                        className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full blur-2xl"
-                        style={{
-                          background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
-                        }}
-                      />
-                    </div>
-
-                    <div className="relative flex flex-col items-center text-center">
-                      <div className="mb-6 p-5 rounded-full bg-white/10 backdrop-blur-sm group-hover:bg-white/15 transition-all duration-300">
-                        <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
-                      </div>
-
-                      <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-white tracking-tight">
-                        {feature.title}
-                      </h3>
-
-                      <p className="text-base lg:text-lg text-gray-300 leading-relaxed max-w-2xl">
-                        {feature.description}
-                      </p>
-                    </div>
+                <div className="h-full flex items-center justify-center px-4">
+                  <div className="group relative max-w-5xl w-full mx-auto overflow-hidden rounded-2xl border-2 border-white/20 hover:border-white/40 transition-all duration-500">
+                    <img
+                      src={image.url}
+                      alt={image.alt}
+                      className="w-full h-[500px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                 </div>
               </div>
@@ -131,7 +99,7 @@ export default function TrustBadge() {
         </div>
 
         <div className="flex justify-center gap-2 mt-8">
-          {features.map((_, index) => (
+          {images.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
