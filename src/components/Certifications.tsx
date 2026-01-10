@@ -1,4 +1,5 @@
-import { Award, Shield, FileCheck, CheckCircle } from 'lucide-react';
+import { Award, Shield, FileCheck, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRef } from 'react';
 
 const certifications = [
   {
@@ -28,6 +29,21 @@ const certifications = [
 ];
 
 export default function Certifications() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (sliderRef.current) {
+      const scrollAmount = 400;
+      const newScrollLeft = direction === 'left'
+        ? sliderRef.current.scrollLeft - scrollAmount
+        : sliderRef.current.scrollLeft + scrollAmount;
+
+      sliderRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: 'smooth'
+      });
+    }
+  };
   return (
     <section id="zertifikate" className="relative py-24 bg-gradient-to-b from-gray-50 via-white to-gray-100">
       <div className="absolute inset-0 opacity-[0.02]" style={{
@@ -47,40 +63,65 @@ export default function Certifications() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {certifications.map((cert, index) => (
-            <div key={index} className="group relative">
-              <div className="absolute -inset-1 bg-royal-700/10 blur-2xl group-hover:bg-royal-700/20 transition-all rounded-lg"></div>
-              <div className="relative h-full bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-royal-700/50 rounded-lg p-8 transition-all">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="p-4 bg-royal-700/20 border-2 border-royal-700 rounded-lg group-hover:scale-110 transition-transform">
-                      <cert.icon className="h-10 w-10 text-royal-700" strokeWidth={2.5} />
+        <div className="relative mb-16">
+          <button
+            onClick={() => scroll('left')}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -translate-x-4 bg-white hover:bg-royal-700 text-royal-700 hover:text-white border-2 border-royal-700 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="h-6 w-6" strokeWidth={3} />
+          </button>
+
+          <button
+            onClick={() => scroll('right')}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 translate-x-4 bg-white hover:bg-royal-700 text-royal-700 hover:text-white border-2 border-royal-700 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="h-6 w-6" strokeWidth={3} />
+          </button>
+
+          <div
+            ref={sliderRef}
+            className="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth px-4"
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+            }}
+          >
+            {certifications.map((cert, index) => (
+              <div key={index} className="group relative flex-shrink-0 w-[500px]">
+                <div className="absolute -inset-1 bg-royal-700/10 blur-2xl group-hover:bg-royal-700/20 transition-all rounded-lg"></div>
+                <div className="relative h-full bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200 group-hover:border-royal-700/50 rounded-lg p-8 transition-all">
+                  <div className="flex items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="p-4 bg-royal-700/20 border-2 border-royal-700 rounded-lg group-hover:scale-110 transition-transform">
+                        <cert.icon className="h-10 w-10 text-royal-700" strokeWidth={2.5} />
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">
-                      {cert.title}
-                    </h3>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">
+                        {cert.title}
+                      </h3>
 
-                    <p className="text-gray-700 mb-6 leading-relaxed font-medium">
-                      {cert.description}
-                    </p>
+                      <p className="text-gray-700 mb-6 leading-relaxed font-medium">
+                        {cert.description}
+                      </p>
 
-                    <div className="space-y-3 pt-6 border-t border-gray-200">
-                      {cert.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center space-x-3">
-                          <div className="w-1.5 h-1.5 bg-royal-700 rounded-full"></div>
-                          <span className="text-gray-600 text-sm font-medium">{feature}</span>
-                        </div>
-                      ))}
+                      <div className="space-y-3 pt-6 border-t border-gray-200">
+                        {cert.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-center space-x-3">
+                            <div className="w-1.5 h-1.5 bg-royal-700 rounded-full"></div>
+                            <span className="text-gray-600 text-sm font-medium">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="relative group">
