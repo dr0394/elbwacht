@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  * {
+    @apply overflow-x-clip;
+  }
+
+  html, body {
+    @apply overflow-x-hidden w-full;
+  }
+
+  body {
+    @apply overflow-y-auto;
+  }
+}
+
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
