@@ -31,9 +31,9 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
                 <span className="font-black text-xs sm:text-sm tracking-widest uppercase bg-gradient-to-r from-royal-700 to-royal-500 bg-clip-text text-transparent">Sicherheit mit Verantwortung</span>
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-6 leading-tight tracking-tight break-words">
-                <span className="text-gray-900">Ihr Sicherheitsdienst aus Hamburg –</span>
+                <span className="text-gray-900">Sicherheitsdienst Hamburg</span>
                 <br />
-                <span className="bg-gradient-to-r from-royal-700 via-royal-500 to-royal-700 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(13,21,45,0.3)]">zuverlässig, präsent, verantwortungsvoll</span>
+                <span className="bg-gradient-to-r from-royal-700 via-royal-500 to-royal-700 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(13,21,45,0.3)]">24/7 Objektschutz & Veranstaltungsschutz</span>
               </h1>
             </div>
 
@@ -46,8 +46,10 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
               >
                 <img
                   src="https://i.imgur.com/AROdPLs.jpg"
-                  alt="Professioneller Sicherheitsdienst"
+                  alt="Sicherheitsdienst Hamburg - 24/7 Objektschutz"
                   className="w-full h-[450px] sm:h-[540px] object-cover object-[center_20%] contrast-110 group-hover/image:scale-105 transition-all duration-700 ease-out"
+                  loading="eager"
+                  fetchPriority="high"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                 <div
@@ -139,8 +141,10 @@ export default function HeroSection({ onOpenForm }: HeroSectionProps) {
               >
                 <img
                   src="https://i.imgur.com/AROdPLs.jpg"
-                  alt="Professioneller Sicherheitsdienst"
+                  alt="Sicherheitsdienst Hamburg - 24/7 Objektschutz"
                   className="w-full h-[600px] object-cover object-[center_20%] contrast-110 group-hover/image:scale-105 transition-all duration-700 ease-out"
+                  loading="eager"
+                  fetchPriority="high"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                 <div
