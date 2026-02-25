@@ -1,9 +1,15 @@
 import { Shield, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
 
 export default function Impressum() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead
+        title="Impressum | Elbwacht Security Service Hamburg"
+        description="Impressum und rechtliche Angaben der Elbwacht Security Service GmbH, Hamburg."
+        canonical="https://elbwacht-jiu2.bolt.host/impressum"
+      />
       <nav className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">

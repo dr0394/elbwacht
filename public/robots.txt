@@ -1,11 +1,75 @@
 # robots.txt für Elbwacht Security Service
+
+# Google - Voller Zugriff
+User-agent: Googlebot
+Allow: /
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.svg
+Allow: /*.webp
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# OpenAI GPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Google Extended (Bard/Gemini)
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Facebook/Meta AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# ByteDance (TikTok)
+User-agent: Bytespider
+Allow: /
+
+# Alle anderen Crawler
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://elbwacht.de/sitemap.xml
-
-# Crawl-Delay für bessere Server-Performance
-Crawl-delay: 1
+Sitemap: https://elbwacht-jiu2.bolt.host/sitemap.xml

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SEOHead from '../components/SEOHead';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import ProblemSolution from '../components/ProblemSolution';
@@ -20,6 +21,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead />
       <Navigation onOpenForm={() => setShowForm(true)} />
       <HeroSection onOpenForm={() => setShowForm(true)} />
       <ProblemSolution />

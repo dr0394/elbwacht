@@ -1,21 +1,20 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, ArrowLeft } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 
 export default function Datenschutz() {
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    // Set page-specific meta tags
-    document.title = 'Datenschutzerklärung - Elbwacht Security Service GmbH';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Datenschutzerklärung der Elbwacht Security Service GmbH - Informationen zum Schutz Ihrer persönlichen Daten');
-    }
   }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100">
+      <SEOHead
+        title="Datenschutzerklärung | Elbwacht Security Service Hamburg"
+        description="Datenschutzerklärung der Elbwacht Security Service GmbH gemäß DSGVO."
+        canonical="https://elbwacht-jiu2.bolt.host/datenschutz"
+      />
       <div className="absolute inset-0 opacity-[0.02]" style={{
         backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(255,255,255,0.1) 50px, rgba(255,255,255,0.1) 51px)`,
       }}></div>
